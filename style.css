@@ -808,7 +808,7 @@ header.ast-sticky-active {
     color: var(--first-color);
 }
 @media (max-width:1400px){
-    #banner-section h2.banner-title {
+    #banner-section h2.banner-title,#video-section h2 {
         font-size: 60px!important;
     }
 }
@@ -873,7 +873,10 @@ header.ast-sticky-active {
     }
     
 }
-@media (max-width:599.98px){    
+@media (max-width:599.98px){ 
+    #banner-section h2.banner-title,#video-section h2 {
+         font-size: 50px!important; 
+    }
     .mos-services-block.block-view.block-view-sm-1 .item {
         width: 100%;
     }
@@ -918,4 +921,8 @@ header.ast-sticky-active {
         padding-bottom: 65px;
     }
 }
-@media (max-width:479.98px){}
+@media (max-width:479.98px){
+    #banner-section h2.banner-title,#video-section h2 {
+         font-size: 40px!important; 
+    }
+}
