@@ -10,4 +10,5 @@ jQuery(document).ready(function($){
         speed: 0.2
     });
     $('.slick-slider').slick();
+    $('.counter').counterUp();
 });
