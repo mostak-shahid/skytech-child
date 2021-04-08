@@ -871,6 +871,9 @@ header.ast-sticky-active {
         padding-top: 30px;
         padding-bottom: 30px;
     }
+    .hover-effect-1 {
+        opacity: 1;
+    }
     
 }
 @media (max-width:768.98px){    
