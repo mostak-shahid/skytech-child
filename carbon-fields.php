@@ -314,7 +314,7 @@ function crb_attach_theme_options() {
                         <?php endif?>
                         <div class="line-filter bg-theme p-30">
                             <div class="filter-content">
-                                <h3 class="mb-10 text-capitalize mos-services-block-title"> <a class="text-white" href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>"><?php echo do_shortcode($slide['title']) ?></a></h3> <a href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>" class="site-button-link text-white"><?php echo ($fileds['btn-title'])?$fields['btn-title']:'Read More' ?></a>
+                                <h3 class="mb-10 text-capitalize mos-services-block-title"> <a class="text-white" href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>"><?php echo do_shortcode($slide['title']) ?></a></h3> <a href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>" class="site-button-link text-white"><?php echo ($slide['btn-title'])?$slide['btn-title']:'Read More' ?></a>
                             </div>
                         </div>
                     </div>
