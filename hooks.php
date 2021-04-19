@@ -193,7 +193,7 @@ function custom_page_title () {
                 Archive Page
                 <?php endif;?>
             </h1>
-        </header>
+        </header>        
     <?php 
     endif;
 }
