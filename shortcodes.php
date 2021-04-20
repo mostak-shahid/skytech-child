@@ -351,8 +351,8 @@ function jobs_list_func( $atts = array(), $content = '' ) {
                     <div class="job-list-item position-relative">
                         <div class="d-flex">
                             <div class="flex-grow-1">
-                                <div class="d-flex align-items-center mb-4"><strong><?php echo $terms_string ?></strong></div>
-                                <div class="d-flex"><span class="job-title h4 line-height-1 m-0"><?php echo get_the_title() ?></span><span class="badge badge-soft-primary ml-2"><?php echo $status ?></span></div>
+                                <div class="d-flex"><span class="job-title h4 line-height-1 m-0"><strong><?php echo get_the_title() ?></strong></span><span class="badge badge-soft-primary ml-2"><?php echo $status ?></span></div>
+                                <div class="d-flex align-items-center mb-4"><?php echo $terms_string ?></div>
                                 <div class="job-item-meta">
                                     <?php if ($job_type) : ?><span class="type">Job Type: <?php echo $job_type; ?></span><?php endif;?>
                                     <?php if ($nov) : ?><span class="nof">No. of Vacancies: <?php echo $nov; ?></span><?php endif;?>
