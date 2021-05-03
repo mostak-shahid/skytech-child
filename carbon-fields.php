@@ -166,9 +166,9 @@ function crb_attach_theme_options() {
             ->set_attribute( 'placeholder', 'Ex: per clean / billed weekly' ),
         Field::make( 'text', 'mos-pricing-subtitle', __( 'Sub Heading' ) ),
         Field::make( 'textarea', 'mos-pricing-desc', __( 'Desacription' ) ),
-        Field::make( 'complex', 'crb_slider', __( 'Features' ) )
+        Field::make( 'complex', 'mos-pricing-features', __( 'Features' ) )
             ->add_fields( array(
-                Field::make( 'text', 'mos-pricing-feature', __( 'Feature' ) ),
+                Field::make( 'text', 'item', __( 'Feature' ) ),
             )),
         Field::make( 'text', 'mos-pricing-btn-title', __( 'Button' ) ),
         Field::make( 'text', 'mos-pricing-btn-url', __( 'URL' ) ),
@@ -197,15 +197,16 @@ function crb_attach_theme_options() {
                 <?php if ($fields['mos-pricing-desc']) : ?>
                     <div class="desc-part"><?php echo esc_html( $fields['mos-pricing-desc'] ); ?></div>
                 <?php endif?>
+                
+                <?php if (sizeof(@$fields['mos-pricing-features'])) : ?>
                 <div class="features-part">
                     <ul class="pricing-features">
-                        <li>Custom schedules everyday.</li>
-                        <li>Desks and workstations cleaning.</li>
-                        <li>Washrooms cleaning.</li>
-                        <li>Floor cleaning.</li>
-                        <li>Waiting area cleaning.</li>
+                        <?php foreach ($fields['mos-pricing-features'] as $value) : ?>
+                            <li><?php echo $value['item'] ?></li>
+                        <?php endforeach;?>
                     </ul>
                 </div>
+                <?php endif?>
                 
                 <?php if($fields['mos-pricing-btn-title'] && $fields['mos-pricing-btn-url']) : ?>
                 <div class="wp-block-buttons"><div class="wp-block-button"><a href="<?php echo esc_html( $fields['mos-pricing-btn-url'] ); ?>" title="" class="wp-block-button__link"><?php echo esc_html( $fields['mos-pricing-btn-title'] ); ?></a></div></div>
