@@ -562,7 +562,7 @@ header.ast-sticky-active {
     padding: 30px;
     padding-top: 60px;
     position: relative;
-    border-top: 2px solid var(--first-color);
+    border: 2px solid var(--first-color);
 }
 .rounded-top-iconbox .mos-icon-block .icon-part {
     width: 80px;
