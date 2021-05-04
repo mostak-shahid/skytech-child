@@ -601,7 +601,7 @@ header.ast-sticky-active {
     border-bottom-color: #b30000;
     border-left-color: #b30000;
 }
-.support-imagebox .mos-image-block {
+.support-imagebox .mos-image-block,.industry-imagebox .mos-image-block {
     display: flex;
 	align-items: center;
 }
