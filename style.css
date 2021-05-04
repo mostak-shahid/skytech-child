@@ -175,7 +175,7 @@ body { color: #383636!important}
     border-radius: 5.2vw!important;
 }
 .img-style-six img {
-    border-radius: 5.2vw 0 5.2vw 0;
+    border-radius: 5.2vw 0 5.2vw 0!important;
 }
 .service-info-box {
     border-bottom: 5px solid #eaeaea;
@@ -600,6 +600,20 @@ header.ast-sticky-active {
     border-bottom-color: #b30000;
     border-left-color: #b30000;
 }
+.support-imagebox .mos-image-block {
+    display: flex;
+	align-items: center;
+}
+.support-imagebox .mos-image-block .img-part {
+	width: 100px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+.support-imagebox .mos-image-block .text-part h4{
+	text-transform: uppercase;
+	margin-bottom: 0;
+	font-weight: 800;
+} 
 /*Related Post*/
 .single-post .related-post {
     margin-left: calc(-50vw + 50%);
