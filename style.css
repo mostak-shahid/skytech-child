@@ -580,8 +580,8 @@ header.ast-sticky-active {
     background-color: #ffffff;
     border-radius: 40px;
     border: 2px solid transparent;
-    border-top-color:  var(--first-color);
-    border-right-color:  var(--first-color);
+    border-top-color:  #eaeaea;
+    border-right-color:  #eaeaea;
     transform: rotate( -45deg );
     -moz-transform: rotate(-45deg);
     -webkit-transform: rotate( -45deg );
@@ -596,6 +596,7 @@ header.ast-sticky-active {
     -moz-transform: rotate(45deg);
     -webkit-transform: rotate( 45deg );
     -ms-transform: rotate(45deg);
+    color: #eaeaea;
 }
 .rounded-top-iconbox .mos-icon-block:hover .icon-part{
 	border-color: transparent;
