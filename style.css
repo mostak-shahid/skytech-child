@@ -603,6 +603,9 @@ header.ast-sticky-active {
     border-bottom-color: #eaeaea;
     border-left-color: #eaeaea;
 }
+.rounded-top-iconbox .mos-icon-block .text-part > h4 {
+    margin-bottom: 0;
+}
 .support-imagebox .mos-image-block,.industry-imagebox .mos-image-block {
     display: flex;
 	align-items: center;
