@@ -562,7 +562,7 @@ header.ast-sticky-active {
     padding: 30px;
     padding-top: 60px;
     position: relative;
-    border-top: 2px solid #b30000;
+    border-top: 2px solid var(--first-color);
 }
 .rounded-top-iconbox .mos-icon-block .icon-part {
     width: 80px;
@@ -579,8 +579,8 @@ header.ast-sticky-active {
     background-color: #ffffff;
     border-radius: 40px;
     border: 2px solid transparent;
-    border-top-color:  #b30000;
-    border-right-color:  #b30000;
+    border-top-color:  var(--first-color);
+    border-right-color:  var(--first-color);
     transform: rotate( -45deg );
     -moz-transform: rotate(-45deg);
     -webkit-transform: rotate( -45deg );
@@ -598,8 +598,8 @@ header.ast-sticky-active {
 }
 .rounded-top-iconbox .mos-icon-block:hover .icon-part{
 	border-color: transparent;
-    border-bottom-color: #b30000;
-    border-left-color: #b30000;
+    border-bottom-color: var(--first-color);
+    border-left-color: var(--first-color);
 }
 .support-imagebox .mos-image-block,.industry-imagebox .mos-image-block {
     display: flex;
