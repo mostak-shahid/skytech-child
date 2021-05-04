@@ -93,6 +93,15 @@ body { color: #383636!important}
     content: '\f046' ' ';
     font-family: 'FontAwesome';
 }
+.tick-list {
+    padding-left: 0;
+    margin-left: 20px;
+    list-style: none;
+}
+.tick-list li::marker{
+    font-family: 'FontAwesome';
+    content: '\f046' ' ';
+}
 .d-flex{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex}
 .justify-content-between{justify-content:space-between!important}
 .d-block{display:block}
