@@ -596,7 +596,7 @@ header.ast-sticky-active {
     -moz-transform: rotate(45deg);
     -webkit-transform: rotate( 45deg );
     -ms-transform: rotate(45deg);
-    color: #eaeaea;
+    color: #eaeaea!important;
 }
 .rounded-top-iconbox .mos-icon-block:hover .icon-part{
 	border-color: transparent;
