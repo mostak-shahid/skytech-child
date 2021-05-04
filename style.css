@@ -605,6 +605,11 @@ header.ast-sticky-active {
     display: flex;
 	align-items: center;
 }
+.industry-imagebox .mos-image-block .img-part {
+    width: 48px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
 .support-imagebox .mos-image-block .img-part {
     width: 60px;
     margin-right: 30px;
@@ -612,6 +617,10 @@ header.ast-sticky-active {
 }
 .support-imagebox .mos-image-block .text-part h4{
 	text-transform: uppercase;
+	margin-bottom: 0;
+	font-weight: 800;
+} 
+.industry-imagebox .mos-image-block .text-part h4{
 	margin-bottom: 0;
 	font-weight: 800;
 } 
