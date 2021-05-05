@@ -641,6 +641,29 @@ header.ast-sticky-active {
     border-left: 2px solid #ffffff;
 	border-bottom: 2px solid #ffffff;
 }
+.mos-faq-block-wrapper .faq-question, .mos-faq-block-wrapper .faq-answer {
+    padding-left: 35px;
+}
+.mos-faq-block-wrapper .faq-question:before, .mos-faq-block-wrapper .faq-answer:before {
+    color: #fff;
+    padding: .2em;
+    display: inline-block;
+    border-radius: 20px;
+    width: 25px;
+    height: 20px;
+    line-height: 21px;
+    margin-right: 8px;
+    text-align: center;
+    margin-left: -40px;
+}
+.mos-faq-block-wrapper .faq-question:before{
+    content: 'Q';
+    background-color: #6dae39;
+}
+.mos-faq-block-wrapper .faq-answer:before{
+    content: 'A';
+    background-color: black;
+}
 /*Related Post*/
 .single-post .related-post {
     margin-left:calc(-50vw + 50%);
