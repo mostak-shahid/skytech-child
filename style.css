@@ -643,6 +643,13 @@ header.ast-sticky-active {
 }
 .mos-faq-block-wrapper .faq-question, .mos-faq-block-wrapper .faq-answer {
     padding-left: 35px;
+}
+.mos-faq-block-wrapper .faq-question{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.mos-faq-block-wrapper .faq-answer {
+    font-size: 15px;
     margin: 0;
 }
 .mos-faq-block-wrapper .faq-question:before, .mos-faq-block-wrapper .faq-answer:before {
