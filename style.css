@@ -117,11 +117,11 @@ body { color: #383636!important}
 .mt-10{margin-top: 10px!important;}
 .mt-50{margin-top:50px!important}
 .mt-150{margin-top:150px!important}
-.p-0{padding: 0;}
-.p-5{padding: 5px;}
-.p-10{padding: 10px;}
-.p-15{padding: 15px;}
-.p-30{padding: 30px;}
+.p-0{padding: 0!important;}
+.p-5{padding: 5px!important;}
+.p-10{padding: 10px!important;}
+.p-15{padding: 15px!important;}
+.p-30{padding: 30px!important;}
 .main-header-menu .sub-menu {
 	width: auto;
 }
