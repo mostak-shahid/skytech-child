@@ -672,6 +672,14 @@ header.ast-sticky-active {
     content: 'A';
     background-color: black;
 }
+.faq-content {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+}
 /*Related Post*/
 .single-post .related-post {
     margin-left:calc(-50vw + 50%);
