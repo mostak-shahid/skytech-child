@@ -102,6 +102,7 @@ body { color:#383636!important}
     font-family:'FontAwesome';
     content:'\f046' ' ';
 }
+.d-none{display:none!important}
 .d-flex{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex}
 .justify-content-between{justify-content:space-between!important}
 .d-block{display:block}
