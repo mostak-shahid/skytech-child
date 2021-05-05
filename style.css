@@ -123,6 +123,9 @@ body { color:#383636!important}
 .p-10{padding:10px!important}
 .p-15{padding:15px!important}
 .p-30{padding:30px!important}
+.p-3em{padding: 3em;}
+.p-4em{padding: 4em;}
+.p-5em{padding: 5em;}
 .main-header-menu .sub-menu {
 	width:auto;
 }
