@@ -636,9 +636,10 @@ header.ast-sticky-active {
 .support-imagebox .mos-image-block .text-part desc {
 	font-size:13px;
 }
-.faq-wrapper {
-    padding:3em;
-    border-left:2px solid #ffffff;
+.mos-faq-block-wrapper {
+    padding: 3em;
+    border-left: 2px solid #ffffff;
+	border-bottom: 2px solid #ffffff;
 }
 /*Related Post*/
 .single-post .related-post {
