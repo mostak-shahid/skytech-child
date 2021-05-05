@@ -673,12 +673,17 @@ header.ast-sticky-active {
     background-color: black;
 }
 .faq-content {
+    height: 100%;
+}
+.faq-content .wp-block-group__inner-container {
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 /*Related Post*/
 .single-post .related-post {
