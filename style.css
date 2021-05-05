@@ -689,9 +689,6 @@ header.ast-sticky-active {
     height: 100%;
     justify-content: space-between;
 }
-.line-filter {
-    background-color: #dfeff3!important;
-}
 /*Related Post*/
 .single-post .related-post {
     margin-left:calc(-50vw + 50%);
@@ -950,8 +947,14 @@ header.ast-sticky-active {
     bottom:0;
 }
 .line-filter .filter-content {
-    border-left:4px solid #ffffff;
+    border-left:4px solid #00aeef;
     padding-left:20px;
+}
+.line-filter {
+    background-color: #dfeff3!important;
+}
+.line-filter a {
+    color: #423e3e!important;
 }
 .mos-services-block .item {
     padding-left:15px;
