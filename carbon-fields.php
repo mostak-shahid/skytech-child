@@ -329,6 +329,32 @@ function crb_attach_theme_options() {
         </div>
         <?php
     });
+    Block::make( __( 'Mos FAQ Block' ) )
+    ->add_fields( array(
+        Field::make( 'text', 'mos-faq-question', __( 'Question' ) ),
+        Field::make( 'textarea', 'mos-faq-answer', __( 'Answer' ) ),
+        Field::make( 'color', 'mos-faq-qcolor', __( 'Question Color' ) ),
+        Field::make( 'color', 'mos-faq-acolor', __( 'Answer Color' ) ),
+        Field::make( 'select', 'mos-faq-alignment', __( 'Content Alignment' ) )
+            ->set_options( array(
+                'left' => 'Left',
+                'right' => 'Right',
+                'center' => 'Center',
+            ))
+    ))
+    ->set_icon( 'warning' )
+    ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ?>
+        <div class="mos-faq-block-wrapper <?php echo $attributes['className'] ?>">
+            <div class="mos-faq-block text-<?php echo esc_html( $fields['mos-faq-alignment'] ) ?>">
+                <dl class="faq-wrapper">
+					<dt class="faq-question" style="color: <?php echo esc_html( $fields['mos-faq-qcolor'] ); ?>"><?php echo esc_html( $fields['mos-faq-question'] ); ?></dt>
+					<dd class="faq-answer" style="color: <?php echo esc_html( $fields['mos-faq-acolor'] ); ?>"><?php echo esc_html( $fields['mos-faq-answer'] ); ?></dd>
+				</dl>
+            </div>
+        </div>
+        <?php
+    });
 }
 add_action( 'after_setup_theme', 'crb_load' );
 function crb_load() {
