@@ -1000,13 +1000,16 @@ header.ast-sticky-active {
 }
 .mos-services-block .slick-dots li button {
     text-indent:-9999px;
-    width:12px;
-    height:12px;
+    width:5px;
+    height:5px;
     padding:0;
     border-radius:50%;
 }
+.mos-services-block .slick-dots li button {
+    background-color:#eaeaea;
+}
 .mos-services-block .slick-dots li.slick-active button {
-    background-color:var(--second-color);
+    background-color:#000000;
 }
 .slick-slider .slick-prev:before, 
 .slick-slider .slick-next:before {
