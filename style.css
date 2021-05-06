@@ -659,6 +659,11 @@ header.ast-sticky-active {
     color: var(--first-color);
     padding: 0;
 }
+.service-imagebox .wp-block-button .wp-block-button__link:after{
+    font-family: 'FontAwesome';
+    content: '\f101';
+    margin-left: 10px;
+}
 .mos-faq-block-wrapper {
     padding: 3em;
     border-left: 2px solid #ffffff;
