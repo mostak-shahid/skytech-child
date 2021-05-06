@@ -912,7 +912,7 @@ header.ast-sticky-active {
 @media (prefers-reduced-motion:reduce){
 	.progress-bar-animated{-webkit-animation:none;animation:none}
 }
-.mos-image-block .text-part>h4,.mos-image-block .text-part>.desc{
+.mos-image-block .text-part>*{
     margin-bottom: 0;
     margin-top: 10px;
 }
