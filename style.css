@@ -115,9 +115,10 @@ body { color:#383636!important}
 .d-none{display:none!important}
 .d-flex{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex}
 .justify-content-between{justify-content:space-between!important}
-.d-block{display:block}
-.align-item-center{align-items:center}
 .justify-content-flex-end{justify-content:flex-end}
+.justify-content-center{justify-content: center}
+.align-item-center{align-items:center}
+.d-block{display:block}
 .h-100hv{min-height:100vh}
 .h-100p{min-height:100%}
 .mb-0{margin-bottom:0!important}
