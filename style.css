@@ -651,6 +651,14 @@ header.ast-sticky-active {
 .support-imagebox .mos-image-block .text-part desc {
 	font-size:13px;
 }
+.service-imagebox {
+    border-radius: 15px 15px 15px 70px;
+}
+.service-imagebox .wp-block-button .wp-block-button__link{
+    background-color: transparent;
+    color: var(--first-color);
+    padding: 0;
+}
 .mos-faq-block-wrapper {
     padding: 3em;
     border-left: 2px solid #ffffff;
