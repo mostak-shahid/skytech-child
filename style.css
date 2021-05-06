@@ -887,17 +887,18 @@ header.ast-sticky-active {
 }
 .highlight{padding:1px 7px;-webkit-border-radius:3px;border-radius:3px;background-image:url('images/stripes_10_w.png')}
 .highlight:not(.highlight_image){color:#fff;background-color:#ec5b30}
-.mos-counter-pricing{padding:50px;background-color:#ffffff;border-radius:10px}
-.mos-counter-pricing .title-part h3{margin-bottom:10px}
-.mos-counter-pricing .pricing-part *{display:inline-block}
-.mos-counter-pricing .pricing-part .pricing-symbol{position:relative;top:-30px;font-size:24px;font-weight:600}
-.mos-counter-pricing .pricing-part .pricing-amount{font-size:72px;font-weight:700}
-.mos-counter-pricing .pricing-part .plan-period{display:inline-block;vertical-align:text-bottom;font-style:italic;font-size:14px}
-.mos-counter-pricing .desc-part{line-height:1.5;margin-bottom:20px}
-.mos-counter-pricing .pricing-features{margin:0;list-style:none;margin-bottom:20px}
-.mos-counter-pricing .pricing-features li{padding:5px 0}
-.mos-counter-pricing .pricing-features li:before{font-family:'FontAwesome';content:'\f05d';margin-right:10px}
-.mos-counter-pricing .pricing-features li + li{border-top:1px solid #eaeaea}
+
+.mos-pricing{padding:50px;background-color:#ffffff;border-radius:10px}
+.mos-pricing .title-part h3{margin-bottom:10px}
+.mos-pricing .pricing-part *{display:inline-block}
+.mos-pricing .pricing-part .pricing-symbol{position:relative;top:-30px;font-size:24px;font-weight:600}
+.mos-pricing .pricing-part .pricing-amount{font-size:72px;font-weight:700}
+.mos-pricing .pricing-part .plan-period{display:inline-block;vertical-align:text-bottom;font-style:italic;font-size:14px}
+.mos-pricing .desc-part{line-height:1.5;margin-bottom:20px}
+.mos-pricing .pricing-features{margin:0;list-style:none;margin-bottom:20px}
+.mos-pricing .pricing-features li{padding:5px 0}
+.mos-pricing .pricing-features li:before{font-family:'FontAwesome';content:'\f05d';margin-right:10px}
+.mos-pricing .pricing-features li + li{border-top:1px solid #eaeaea}
 .mos-icon-block-wrapper .mos-icon-block .icon-part i{color:var(--color)}
 .mos-icon-block-wrapper .mos-icon-block .text-part p{margin-bottom:0}
 .mos-progress-wrap .text-part{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;justify-content:space-between!important;align-items:center}
@@ -910,6 +911,16 @@ header.ast-sticky-active {
 .progress-bar-animated{-webkit-animation:1s linear infinite progress-bar-stripes;animation:1s linear infinite progress-bar-stripes}
 @media (prefers-reduced-motion:reduce){
 	.progress-bar-animated{-webkit-animation:none;animation:none}
+}
+.mos-image-block .text-part>h4,.mos-image-block .text-part>.desc{
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.mos-image-block.text-center .wp-block-buttons {
+    justify-content: center;
+}
+.mos-image-block.text-right .wp-block-buttons {
+    justify-content: flex-end;
 }
 .get_in_touch{background-color:#2e96db;padding:25px 20px 25px 30px;background-repeat:no-repeat;background-position:right bottom;margin-bottom:1.6em}
 .get_in_touch, .get_in_touch a, .get_in_touch h3, .get_in_touch ul{color:#fff!important}
