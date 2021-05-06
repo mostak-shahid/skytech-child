@@ -10,8 +10,14 @@ Text Domain:skytech-child
 Template:astra
 */
 :root{
-  --first-color:#00aeef;
-  --second-color:#3480e0;
+    --first-color:#00aeef;
+    --second-color:#3480e0;
+    --first-color-10:#ccf1ff;
+    --first-color-20:#99e4ff;
+    --first-color-30:#66d6ff;
+    --second-color-10:#d3e4f8;
+    --second-color-20:#a6c8f2;
+    --second-color-30:#7aadeb;
 }
 html{scroll-behavior:smooth}
 body { color:#383636!important}
@@ -23,6 +29,7 @@ body { color:#383636!important}
 .bg-theme{background-color:var(--first-color)!important}
 .bg-theme-alt{background-color:var(--second-color)!important}
 .bg-white{background-color:#ffffff!important}
+.bg-theme-10{background-color: var(--first-color-10)!important}
 .smooth{-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out}
 
 .hidden-link {
