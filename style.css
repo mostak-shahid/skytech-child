@@ -30,7 +30,7 @@ body { color:#383636!important}
 .bg-theme-alt{background-color:var(--second-color)!important}
 .bg-white{background-color:#ffffff!important}
 .bg-theme-10{background-color: var(--first-color-10)!important}
-.bg-light-gray{background-color:#f1f1f1!important}
+.bg-light-graybg-light-gray{background-color:#f1f1f1!important}
 .smooth{-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out}
 
 .hidden-link {
@@ -925,6 +925,9 @@ header.ast-sticky-active {
 .mos-image-block .text-part>*{
     margin-bottom: 0;
     margin-top: 10px;
+}
+.mos-image-block .text-part .desc p:last-child {
+    margin-bottom: 0;
 }
 .mos-image-block.text-center .wp-block-buttons {
     justify-content: center;
