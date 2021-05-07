@@ -41,8 +41,45 @@ function child_enqueue_styles() {
     wp_enqueue_script('script', get_stylesheet_directory_uri() . '/script.js', 'jquery');
 
 }
-
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
+
+
+function mos_get_posts($post_type = 'post',$posts_per_page='-1', $post_status = array('publish')){
+    $args = array(
+        'post_type' => $post_type,
+        'posts_per_page' => $posts_per_page,
+        'post_status' => $post_status,
+    );
+    $output = [];
+    $query = new WP_Query( $args );
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) { $query->the_post();
+            $output[get_the_ID()] = get_the_title();
+        }
+    }
+    wp_reset_postdata();    
+    return $output;
+}
+
+function mos_get_terms ($taxonomy = 'category', $return='all') {
+    global $wpdb;
+    $output = array();
+    $all_taxonomies = $wpdb->get_results( "SELECT {$wpdb->prefix}term_taxonomy.term_id, {$wpdb->prefix}term_taxonomy.taxonomy, {$wpdb->prefix}terms.name, {$wpdb->prefix}terms.slug, {$wpdb->prefix}term_taxonomy.description, {$wpdb->prefix}term_taxonomy.parent, {$wpdb->prefix}term_taxonomy.count, {$wpdb->prefix}terms.term_group FROM {$wpdb->prefix}term_taxonomy INNER JOIN {$wpdb->prefix}terms ON {$wpdb->prefix}term_taxonomy.term_id={$wpdb->prefix}terms.term_id", ARRAY_A);
+    if ($return=='all'){
+        foreach ($all_taxonomies as $key => $value) {
+            if ($value["taxonomy"] == $taxonomy) {
+                $output[] = $value;
+            }
+        }
+    } else {        
+        foreach ($all_taxonomies as $key => $value) {
+            $output[$value['term_id']] = $value['name'];
+        }
+    }
+    return $output;
+}
+//var_dump(mos_get_terms ('category', 'small'));
+
 require_once 'astra-custom.php';
 require_once 'hooks.php';
 require_once 'shortcodes.php';

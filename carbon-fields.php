@@ -355,6 +355,83 @@ function crb_attach_theme_options() {
         </div>
         <?php
     });
+    Block::make( __( 'Mos Case Studies Block' ) )
+    ->add_fields( array(
+        Field::make( 'text', 'mos-post-block-nop', __( 'No of Posts' ) ),
+        Field::make( 'multiselect', 'mos-post-block-posts', __( 'Select Posts' ) )
+            ->add_options( mos_get_posts('case-study')),
+        Field::make( 'multiselect', 'mos-post-block-categories', __( 'Select Categories' ) )
+            ->add_options( mos_get_terms ('case_study_category', 'small')),
+        Field::make( 'select', 'mos-post-block-layout', __( 'Layout' ) )
+            ->set_options( array(
+                'grid' => 'Grid',
+                'list' => 'List',
+            )),
+        Field::make( 'select', 'mos-post-block-grid', __( 'Grid' ) )
+            ->set_options( array(
+                'default' => 'Default',
+                'six' => 'Two Grids',
+                'four' => 'Three Grids',
+                'three' => 'Four Grids',
+            )),
+        Field::make( 'select', 'mos-post-block-gap', __( 'Gap' ) )
+            ->set_options( array(
+                'gap-default' => 'Default',
+                'gap-sm' => 'Small Gap',
+                'gap-md' => 'Medium Gap',
+                'gap-lg' => 'Large Gap',
+            )),
+    ))
+    ->set_icon( 'admin-post' )
+    ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        $layout = (@$fields['mos-post-block-layout'])?$fields['mos-post-block-layout']:'grid';
+        $grid = (@$fields['mos-post-block-grid'])?$fields['mos-post-block-grid']:'default';
+        $gap = (@$fields['mos-post-block-gap'])?$fields['mos-post-block-gap']:'gap-default';
+        $options = array(
+            'post_type' => 'case-study'
+        );  
+        /*
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'people',
+            'field'    => 'slug',
+            'terms'    => 'bob',
+        ),
+    ),        
+        */
+        if (@$fields['mos-post-block-categories'] && sizeof($fields['mos-post-block-categories'])) {
+            //$options['category__in'] = $fields['mos-post-block-categories'];
+            $options['tax_query'][] = array(
+                'taxonomy' => 'case_study_category',
+                'field'    => 'id',
+                'terms'    => $fields['mos-post-block-categories'],
+            ),
+            $options['posts_per_page'] = ($fields['mos-post-block-nop'])?$fields['mos-post-block-nop']:-1;
+        } elseif (@$fields['mos-post-block-posts'] && sizeof($fields['mos-post-block-posts'])) {
+            $options['post__in'] = $fields['mos-post-block-posts'];                    
+        }
+        $query = new WP_Query( $options );
+        if ( $query->have_posts() ) : ?>
+            <div class="mos-post-block-wrapper <?php echo $attributes['className'] ?>">
+                <div class="mos-post-block mos-post-grid mos-post-layout-<?php echo $layout ?> <?php echo $gap?>">
+                    <?php while ( $query->have_posts() ) : $query->the_post(); ?> 
+                        <?php 
+                            if ($layout == 'grid') {
+                                $unit_class="mos-post-grid-".$fields['mos-post-block-grid'];
+                            } else {
+                                if ($grid == 'default')
+                                    $unit_class="mos-post-grid-twelve";
+                                else
+                                    $unit_class="mos-post-grid-".$fields['mos-post-block-grid']; 
+                            }
+                        ?>
+                        <?php echo get_the_title()?>     
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        <?php endif;
+        wp_reset_postdata();
+    });
 }
 add_action( 'after_setup_theme', 'crb_load' );
 function crb_load() {
