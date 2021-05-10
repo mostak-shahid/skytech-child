@@ -67,7 +67,7 @@ function crb_attach_theme_options() {
             Field::make( 'complex', 'case-study-team', __( 'Team' ) )
                 ->add_fields( array(
                     Field::make( 'text', 'case-study-team-name', __( 'Title' ) ),
-                    Field::make( 'text', 'case-study-team-position', __( 'Value' ) ),
+                    Field::make( 'text', 'case-study-team-position', __( 'Position' ) ),
                     Field::make( 'image', 'case-study-team-image', __( 'Image' ) ),
                 )),
             

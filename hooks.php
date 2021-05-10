@@ -173,6 +173,41 @@ if ( ! function_exists( 'custom_event_post_gallery' ) ) {
         endif;
 	}
 }
+add_action('astra_entry_content_before', 'custom_case_study_post_meta', 11);
+if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
+	function custom_case_study_post_meta() {
+        if ('case-study' == get_post_type()) :
+            $working_areas = carbon_get_post_meta( get_the_ID(), 'case-study-working-areas' );
+            $short_description = carbon_get_post_meta( get_the_ID(), 'case-study-short-description' );
+            $client_name = carbon_get_post_meta( get_the_ID(), 'case-study-client-name' );
+            $client_image = carbon_get_post_meta( get_the_ID(), 'case-study-client-image' );
+            $client_position = carbon_get_post_meta( get_the_ID(), 'case-study-client-position' );
+            ?>
+            <div class="case-study-metas">
+                <?php if(sizeof($working_areas)) : ?>
+                    <ul class="working-areas list-inline">
+                        <?php foreach($working_areas as $working_areas) : ?>
+                            <li><?php echo $working_areas ?></li>
+                        <?php endforeach?>
+                    </ul>
+                <?php endif?>
+                <div class="d-flex">
+                    <div class="short-description"><?php echo $short_description ?></div>
+                    <div class="customer-box text-center">
+                        <div class="customer-avatar-block">
+                            <img src="<?php echo wp_get_attachment_url($client_image) ?>" alt="<?php echo $client_name ?>">
+                        </div>
+                        <div class="customer-block">
+                            <div class="customer-name"><?php echo $client_name ?></div>
+                            <div class="customer-info"><?php echo $client_position?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            <?php
+            endif;
+	}
+}
 add_action('astra_content_top', 'custom_page_title');
 function custom_page_title () {
     if (!is_home() && !is_page() && !is_single()) : 
