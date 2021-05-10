@@ -87,9 +87,9 @@ body { color:#383636!important}
 .text-lowercase {text-transform:lowercase !important}
 .text-uppercase {text-transform:uppercase !important}
 .text-capitalize {text-transform:capitalize !important}
-.box-shadow-sm,.img-shadow-sm img{box-shadow:0 0 5px 0 rgba(0,0,0,.2)}
-.box-shadow,.img-shadow img{box-shadow:0 0 10px 0 rgba(0,0,0,.2)}
-.box-shadow-lg,.img-shadow-lg img{box-shadow:0 0 15px 0 rgba(0,0,0,.2)}
+.box-shadow-sm,.img-box-shadow-sm img{box-shadow:0 0 5px 0 rgba(0,0,0,.2)}
+.box-shadow,.img-box-shadow img{box-shadow:0 0 10px 0 rgba(0,0,0,.2)}
+.box-shadow-lg,.img-box-shadow-lg img{box-shadow:0 0 15px 0 rgba(0,0,0,.2)}
 .white-text-shadow{text-shadow:0px 0px 2px #ffffff}
 .black-text-shadow{text-shadow:0px 0px 2px #000000}
 .list-unstyled,.list-inline{padding:0!important;list-style:none;margin:0!important}
