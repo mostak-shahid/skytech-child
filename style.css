@@ -140,6 +140,11 @@ body { color:#383636!important}
 .p-3em{padding: 3em!important}
 .p-4em{padding: 4em!important}
 .p-5em{padding: 5em!important}
+.wp-block-image:after {
+    content: '';
+    width: 100%;
+    display: table;
+}
 .main-header-menu .sub-menu {
 	width:auto;
 }
