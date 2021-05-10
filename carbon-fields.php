@@ -35,6 +35,44 @@ function crb_attach_theme_options() {
                 ->set_storage_format( 'Y-m-d' ),
             Field::make( 'text', 'job-link', __( 'Apply Link' ) ),
         ));
+    Container::make( 'post_meta', 'Case Study Data' )
+        ->where( 'post_type', '=', 'case-study' )
+        ->add_fields( array(
+            Field::make( 'text', 'case-study-company-name', __( 'Company Name' ) ),
+            Field::make( 'image', 'case-study-company-logo', __( 'Logo' ) ),
+            Field::make( 'rich_text', 'case-study-company-about', __( 'About Company' ) ),
+            Field::make( 'text', 'case-study-industry', __( 'Industry' ) ),
+            Field::make( 'complex', 'case-study-company-data', __( 'Company data' ) )
+                ->add_fields( array(
+                    Field::make( 'text', 'title', __( 'Title' ) ),
+                    Field::make( 'text', 'value', __( 'Value' ) ),
+                )),            
+            Field::make( 'text', 'case-study-client-name', __( 'Client Name' ) ),
+            Field::make( 'image', 'case-study-client-image', __( 'Client Image' ) ),
+            Field::make( 'text', 'case-study-client-position', __( 'Client Position' ) ),
+            
+            Field::make( 'multiselect', 'case-study-working-areas', __( 'Working Areas' ) )
+                ->set_options( array(
+                    'Appointment Setting' => 'Appointment Setting',
+                    'Software Development' => 'Software Development',
+                    'Advertising & Marketing' => 'Advertising & Marketing',
+                )),
+            Field::make( 'complex', 'case-study-results', __( 'Results' ) )
+                ->add_fields( array(
+                    Field::make( 'text', 'title', __( 'Title' ) ),
+                    Field::make( 'text', 'value', __( 'Value' ) ),
+                    Field::make( 'text', 'suffix', __( 'Suffix' ) ),
+                )),
+            Field::make( 'rich_text', 'case-study-short-description', __( 'Short Description' ) ),
+            Field::make( 'oembed', 'case-study-oembed', __( 'Embeded Video' ) ),
+            Field::make( 'complex', 'case-study-team', __( 'Team' ) )
+                ->add_fields( array(
+                    Field::make( 'text', 'name', __( 'Title' ) ),
+                    Field::make( 'text', 'position', __( 'Value' ) ),
+                    Field::make( 'image', 'image', __( 'Image' ) ),
+                )),
+            
+        ));
     Block::make( __( 'Mos Image Block' ) )
     ->add_fields( array(
         Field::make( 'text', 'mos-image-heading', __( 'Heading' ) ),
@@ -405,7 +443,7 @@ function crb_attach_theme_options() {
                 'taxonomy' => 'case_study_category',
                 'field'    => 'id',
                 'terms'    => $fields['mos-post-block-categories'],
-            ),
+            );
             $options['posts_per_page'] = ($fields['mos-post-block-nop'])?$fields['mos-post-block-nop']:-1;
         } elseif (@$fields['mos-post-block-posts'] && sizeof($fields['mos-post-block-posts'])) {
             $options['post__in'] = $fields['mos-post-block-posts'];                    
