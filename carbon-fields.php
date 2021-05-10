@@ -44,13 +44,12 @@ function crb_attach_theme_options() {
             Field::make( 'text', 'case-study-industry', __( 'Industry' ) ),
             Field::make( 'complex', 'case-study-company-data', __( 'Company data' ) )
                 ->add_fields( array(
-                    Field::make( 'text', 'title', __( 'Title' ) ),
-                    Field::make( 'text', 'value', __( 'Value' ) ),
+                    Field::make( 'text', 'case-study-company-data-title', __( 'Title' ) ),
+                    Field::make( 'text', 'case-study-company-data-value', __( 'Value' ) ),
                 )),            
             Field::make( 'text', 'case-study-client-name', __( 'Client Name' ) ),
             Field::make( 'image', 'case-study-client-image', __( 'Client Image' ) ),
-            Field::make( 'text', 'case-study-client-position', __( 'Client Position' ) ),
-            
+            Field::make( 'text', 'case-study-client-position', __( 'Client Position' ) ),            
             Field::make( 'multiselect', 'case-study-working-areas', __( 'Working Areas' ) )
                 ->set_options( array(
                     'Appointment Setting' => 'Appointment Setting',
@@ -59,17 +58,17 @@ function crb_attach_theme_options() {
                 )),
             Field::make( 'complex', 'case-study-results', __( 'Results' ) )
                 ->add_fields( array(
-                    Field::make( 'text', 'title', __( 'Title' ) ),
-                    Field::make( 'text', 'value', __( 'Value' ) ),
-                    Field::make( 'text', 'suffix', __( 'Suffix' ) ),
+                    Field::make( 'text', 'case-study-results-title', __( 'Title' ) ),
+                    Field::make( 'text', 'case-study-results-value', __( 'Value' ) ),
+                    Field::make( 'text', 'case-study-results-suffix', __( 'Suffix' ) ),
                 )),
             Field::make( 'rich_text', 'case-study-short-description', __( 'Short Description' ) ),
             Field::make( 'oembed', 'case-study-oembed', __( 'Embeded Video' ) ),
             Field::make( 'complex', 'case-study-team', __( 'Team' ) )
                 ->add_fields( array(
-                    Field::make( 'text', 'name', __( 'Title' ) ),
-                    Field::make( 'text', 'position', __( 'Value' ) ),
-                    Field::make( 'image', 'image', __( 'Image' ) ),
+                    Field::make( 'text', 'case-study-team-name', __( 'Title' ) ),
+                    Field::make( 'text', 'case-study-team-position', __( 'Value' ) ),
+                    Field::make( 'image', 'case-study-team-image', __( 'Image' ) ),
                 )),
             
         ));
