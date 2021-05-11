@@ -325,7 +325,7 @@ body { color:#383636!important}
     font-weight: 600;
     color: #262626;
 }
-.post-team .person-position[data-v-c4af1fb6] {
+.post-team .person-position {
     font-size: 10px;
     text-align: center;
     color: #979797;
