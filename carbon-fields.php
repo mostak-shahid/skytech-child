@@ -394,24 +394,19 @@ function crb_attach_theme_options() {
     });
     Block::make( __( 'Mos Case Studies Block' ) )
     ->add_fields( array(
-        Field::make( 'text', 'mos-post-block-nop', __( 'No of Posts' ) ),
-        Field::make( 'multiselect', 'mos-post-block-posts', __( 'Select Posts' ) )
+        Field::make( 'text', 'mos-case-study-block-nop', __( 'No of Posts' ) ),
+        Field::make( 'multiselect', 'mos-case-study-block-posts', __( 'Select Posts' ) )
             ->add_options( mos_get_posts('case-study')),
-        Field::make( 'multiselect', 'mos-post-block-categories', __( 'Select Categories' ) )
+        Field::make( 'multiselect', 'mos-case-study-block-categories', __( 'Select Categories' ) )
             ->add_options( mos_get_terms ('case_study_category', 'small')),
-        Field::make( 'select', 'mos-post-block-layout', __( 'Layout' ) )
+
+        Field::make( 'select', 'mos-case-study-block-grid', __( 'Grid' ) )
             ->set_options( array(
-                'grid' => 'Grid',
-                'list' => 'List',
-            )),
-        Field::make( 'select', 'mos-post-block-grid', __( 'Grid' ) )
-            ->set_options( array(
-                'default' => 'Default',
                 'six' => 'Two Grids',
                 'four' => 'Three Grids',
                 'three' => 'Four Grids',
             )),
-        Field::make( 'select', 'mos-post-block-gap', __( 'Gap' ) )
+        Field::make( 'select', 'mos-case-study-block-gap', __( 'Gap' ) )
             ->set_options( array(
                 'gap-default' => 'Default',
                 'gap-sm' => 'Small Gap',
@@ -421,9 +416,8 @@ function crb_attach_theme_options() {
     ))
     ->set_icon( 'admin-post' )
     ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-        $layout = (@$fields['mos-post-block-layout'])?$fields['mos-post-block-layout']:'grid';
-        $grid = (@$fields['mos-post-block-grid'])?$fields['mos-post-block-grid']:'default';
-        $gap = (@$fields['mos-post-block-gap'])?$fields['mos-post-block-gap']:'gap-default';
+        $grid = (@$fields['mos-case-study-block-grid'])?$fields['mos-case-study-block-grid']:'six';
+        $gap = (@$fields['mos-case-study-block-gap'])?$fields['mos-case-study-block-gap']:'gap-default';
         $options = array(
             'post_type' => 'case-study'
         );  
@@ -436,33 +430,63 @@ function crb_attach_theme_options() {
         ),
     ),        
         */
-        if (@$fields['mos-post-block-categories'] && sizeof($fields['mos-post-block-categories'])) {
-            //$options['category__in'] = $fields['mos-post-block-categories'];
+        if (@$fields['mos-case-study-block-categories'] && sizeof($fields['mos-case-study-block-categories'])) {
+            //$options['category__in'] = $fields['mos-case-study-block-categories'];
             $options['tax_query'][] = array(
                 'taxonomy' => 'case_study_category',
                 'field'    => 'id',
-                'terms'    => $fields['mos-post-block-categories'],
+                'terms'    => $fields['mos-case-study-block-categories'],
             );
-            $options['posts_per_page'] = ($fields['mos-post-block-nop'])?$fields['mos-post-block-nop']:-1;
-        } elseif (@$fields['mos-post-block-posts'] && sizeof($fields['mos-post-block-posts'])) {
-            $options['post__in'] = $fields['mos-post-block-posts'];                    
+            $options['posts_per_page'] = ($fields['mos-case-study-block-nop'])?$fields['mos-case-study-block-nop']:-1;
+        } elseif (@$fields['mos-case-study-block-posts'] && sizeof($fields['mos-case-study-block-posts'])) {
+            $options['post__in'] = $fields['mos-case-study-block-posts'];                    
         }
         $query = new WP_Query( $options );
         if ( $query->have_posts() ) : ?>
-            <div class="mos-post-block-wrapper <?php echo $attributes['className'] ?>">
-                <div class="mos-post-block mos-post-grid mos-post-layout-<?php echo $layout ?> <?php echo $gap?>">
+            <div class="mos-case-study-block-wrapper <?php echo $attributes['className'] ?>">
+                <div class="mos-case-study-block mos-post-grid <?php echo $gap?>">
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?> 
-                        <?php 
-                            if ($layout == 'grid') {
-                                $unit_class="mos-post-grid-".$fields['mos-post-block-grid'];
-                            } else {
-                                if ($grid == 'default')
-                                    $unit_class="mos-post-grid-twelve";
-                                else
-                                    $unit_class="mos-post-grid-".$fields['mos-post-block-grid']; 
-                            }
+                        <?php
+                        $industry = carbon_get_post_meta( get_the_ID(), 'case-study-industry' );
+                        $results = carbon_get_post_meta( get_the_ID(), 'case-study-results' );
+                        $short_description = carbon_get_post_meta( get_the_ID(), 'case-study-short-description' );        
+                        $client_name = carbon_get_post_meta( get_the_ID(), 'case-study-client-name' );
+                        $client_image = carbon_get_post_meta( get_the_ID(), 'case-study-client-image' );
+                        $client_position = carbon_get_post_meta( get_the_ID(), 'case-study-client-position' );
                         ?>
-                        <?php echo get_the_title()?>     
+                        <div class="mos-post-grid-<?php echo $grid?>">
+                            <a href="<?php echo get_the_permalink() ?>" class="case-item">
+                                <article class="case">
+                                    <div class="case-industry">
+                                        <h3 class="case-industry-title">Industry:</h3>
+                                        <p class="case-industry-value"><?php echo $industry ?></p>
+                                    </div>
+                                    <?php if (sizeof($results)) : ?>
+                                    <div class="case-results">
+                                        <?php foreach($results as $key=>$value) : ?>
+                                        <div class="result result-<?php echo $key ?>">
+                                            <div class="result-text">
+                                                <div class="result-value">
+                                                    <span class="counter"><?php echo $value['case-study-results-value'] ?></span>
+                                                    <span class="suffix"><?php echo $value['case-study-results-suffix'] ?></span>
+                                                </div>
+                                                <div class="result-title"><?php echo $value['case-study-results-title'] ?></div>
+                                            </div>
+                                        </div>
+                                        <?php endforeach;?>
+                                    </div>
+                                    <?php endif;?>                                                                                                                                                          
+                                    <div class="case-text"><?php echo $short_description ?></div>
+                                    <div class="case-customer">
+                                        <div class="customer-info">
+                                            <div class="customer-name"><?php echo $client_name ?></div>
+                                            <div class="customer-position"><?php echo $client_position ?></div>
+                                        </div>
+                                        <div class="customer-photo"><img alt="<?php echo $client_name ?>" class=" ls-is-cached lazyloaded" src="<?php echo wp_get_attachment_url($client_image) ?>"></div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>   
                     <?php endwhile; ?>
                 </div>
             </div>

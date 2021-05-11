@@ -330,6 +330,98 @@ body { color:#383636!important}
     text-align: center;
     color: #979797;
 }
+.mos-case-study-block-wrapper .case-item {
+    box-shadow: 0 15px 64px rgb(9 19 55 / 5%);
+    border-radius: 5px;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 30px;
+}
+.mos-case-study-block-wrapper .case {
+    padding: 30px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    color: #393939;
+}
+.mos-case-study-block-wrapper .case-industry{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.mos-case-study-block-wrapper .case-industry-title{
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+.mos-case-study-block-wrapper .case-industry-value{
+    font-size: 10px;
+    color: #6d6d6d;
+    padding: 5px 10px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    margin-bottom: 0;
+}
+.mos-case-study-block-wrapper .case-results{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px 0;
+    gap: 15px 0;
+    margin-bottom: 30px;
+}
+.mos-case-study-block-wrapper .case-results .result{
+    display: flex;
+}
+.mos-case-study-block-wrapper .case-results .result-value{
+    font-size: 24px;
+    font-weight: 700;
+}
+.mos-case-study-block-wrapper .case-results .result-title{
+    font-size: 14px;
+    line-height: 18px;
+}
+.mos-case-study-block-wrapper .case-text{
+    position: relative;
+    font-size: 16px;
+    line-height: 26px;
+    padding-left: 30px;
+    margin-bottom: 25px;
+}
+.mos-case-study-block-wrapper .case-text:before {
+    content: url(images/24b413d3bc0114938f23f430dcfb85c1.svg);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+}
+.mos-case-study-block-wrapper .case-customer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.mos-case-study-block-wrapper .case-customer .customer-info {
+    text-align: right;
+    margin-right: 10px;
+}
+.mos-case-study-block-wrapper .case-customer .customer-name{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+}
+.mos-case-study-block-wrapper .case-customer .customer-position{
+    font-size: 11px;
+    line-height: 16px;
+}
+.mos-case-study-block-wrapper .case-customer .customer-photo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
 .img-full img,
 .img-style-one img,
 .img-style-two img,
