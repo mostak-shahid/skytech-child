@@ -204,9 +204,11 @@ if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
                         <div class="short-description"><?php echo do_shortcode($short_description)?></div>
                     <?php endif?>
                     <div class="customer-box text-center">
+                        <?php if ($client_image) : ?>
                         <div class="customer-avatar-block">
                             <img src="<?php echo wp_get_attachment_url($client_image) ?>" alt="<?php echo $client_name ?>">
                         </div>
+                        <?php endif?>
                         <div class="customer-block">
                             <div class="customer-name"><?php echo $client_name ?></div>
                             <div class="customer-info"><?php echo $client_position?></div>
