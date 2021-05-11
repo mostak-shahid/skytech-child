@@ -182,6 +182,14 @@ if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
             $client_name = carbon_get_post_meta( get_the_ID(), 'case-study-client-name' );
             $client_image = carbon_get_post_meta( get_the_ID(), 'case-study-client-image' );
             $client_position = carbon_get_post_meta( get_the_ID(), 'case-study-client-position' );
+        
+            $results = carbon_get_post_meta( get_the_ID(), 'case-study-results' );
+            $company_about = carbon_get_post_meta( get_the_ID(), 'case-study-company-about' );
+            $oembed = carbon_get_post_meta( get_the_ID(), 'case-study-oembed' );
+        
+            $industry = carbon_get_post_meta( get_the_ID(), 'case-study-industry' );
+            $company_data = carbon_get_post_meta( get_the_ID(), 'case-study-company-data' );
+        
             ?>
             <div class="case-study-metas">
                 <?php if(sizeof($working_areas)) : ?>
@@ -192,7 +200,9 @@ if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
                     </ul>
                 <?php endif?>
                 <div class="d-flex">
-                    <div class="short-description"><?php echo $short_description ?></div>
+                    <?php if ($short_description) : ?>
+                        <div class="short-description"><?php echo do_shortcode($short_description)?></div>
+                    <?php endif?>
                     <div class="customer-box text-center">
                         <div class="customer-avatar-block">
                             <img src="<?php echo wp_get_attachment_url($client_image) ?>" alt="<?php echo $client_name ?>">
@@ -203,6 +213,43 @@ if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
                         </div>
                     </div>
                 </div>
+                <?php if (sizeof($results)) : ?>
+                <div class="header-results">
+                    <?php foreach($results as $key => $value) : ?>
+                    <div class="result result-<?php echo $key ?>">
+                        <div class="chart-icon"></div>
+                        <div class="result-text">
+                            <div class="result-value"><span class="counter"><?php echo $value['case-study-results-value'] ?></span><span class="suffix"><?php echo $value['case-study-results-suffix'] ?></span></div>
+                            <div class="result-title"><?php echo $value['case-study-results-title'] ?></div>
+                        </div>
+                    </div>
+                    <?php endforeach;?>
+                </div>
+                <?php endif?>
+                <?php if ($short_description) : ?>
+                    <div class="company_about"><?php echo $company_about?></div>
+                <?php endif?> 
+                <?php if ($oembed) : ?>
+                    <div class="embed-responsive embed-responsive-21by9 mb-20">
+                        <iframe class="embed-responsive-item" src="<?php echo $oembed ?>"></iframe>
+                    </div>
+                <?php endif?>  
+                <div class="post-fields">
+                    <?php if ($industry) : ?>
+                    <div class="field field-industry">
+                        <div class="field-title">Industry</div>
+                        <div class="field-value"><?php echo $industry ?></div>
+                    </div>
+                    <?php endif?>
+                    <?php if (sizeof($company_data)) : ?>
+                        <?php foreach($company_data as $key => $value) : ?>
+                            <div class="field field-<?php echo $key ?>">
+                                <div class="field-title"><?php echo $value['case-study-company-data-title'] ?></div>
+                                <div class="field-value"><?php echo $value['case-study-company-data-value'] ?></div>
+                            </div>
+                        <?php endforeach?>
+                    <?php endif?>
+                </div>              
             </div>        
             <?php
             endif;
