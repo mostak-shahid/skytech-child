@@ -63,7 +63,7 @@ function crb_attach_theme_options() {
                     Field::make( 'text', 'case-study-results-suffix', __( 'Suffix' ) ),
                 )),
             Field::make( 'rich_text', 'case-study-short-description', __( 'Short Description' ) ),
-            Field::make( 'oembed', 'case-study-oembed', __( 'Embeded Video' ) ),
+            //Field::make( 'oembed', 'case-study-oembed', __( 'Embeded Video' ) ),
             Field::make( 'complex', 'case-study-team', __( 'Team' ) )
                 ->add_fields( array(
                     Field::make( 'text', 'case-study-team-name', __( 'Title' ) ),

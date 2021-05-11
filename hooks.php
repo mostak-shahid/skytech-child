@@ -190,6 +190,8 @@ if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
             $industry = carbon_get_post_meta( get_the_ID(), 'case-study-industry' );
             $company_data = carbon_get_post_meta( get_the_ID(), 'case-study-company-data' );
         
+            $team = carbon_get_post_meta( get_the_ID(), 'case-study-team' );
+        
             ?>
             <div class="case-study-metas">
                 <?php if(sizeof($working_areas)) : ?>
@@ -251,7 +253,43 @@ if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
                             </div>
                         <?php endforeach?>
                     <?php endif?>
-                </div>              
+                </div>
+                <?php if (sizeof($team)) : ?> 
+                <div class="post-team">
+                    <h3 class="team-title">Responsible Team:</h3>
+                    <div class="team-set">
+                        <?php foreach($team as $key=>$value) : ?>
+                        <div class="person">
+                            <?php if (@$value['case-study-team-image']) :?>
+                            <div class="person-avatar">
+                                <img src="<?php echo wp_get_attachment_url($value['case-study-team-image']) ?>" alt="<?php echo $value['case-study-team-name'] ?>">
+                            </div>
+                            <?php endif?>
+                            <div class="person-name"><?php echo $value['case-study-team-name'] ?></div>
+                            <div class="person-position"><?php echo $value['case-study-team-position'] ?></div>
+                        </div>
+                        <?php endforeach;?>
+                        <div class="person">
+                            <div class="person-avatar"><img src="https://firebasestorage.googleapis.com/v0/b/belkins-3c679.appspot.com/o/flamelink%2Fmedia%2FAlla%20Ivanova.png?alt=media&amp;amp;token=00ae4b58-f857-4eb7-a0cd-b678c3f86b5f" alt="Alla Ivanova"></div>
+                            <div class="person-name">
+                                Alla Ivanova
+                            </div>
+                            <div class="person-position">
+                                Senior Sales Development Representative
+                            </div>
+                        </div>
+                        <div class="person">
+                            <div class="person-avatar"><img src="https://firebasestorage.googleapis.com/v0/b/belkins-3c679.appspot.com/o/flamelink%2Fmedia%2FVlad%20Yaremenko.png?alt=media&amp;amp;token=1c431da2-3a0a-44cf-a82a-1c8453271dd8" alt="Vladislav Yaremenko"></div>
+                            <div class="person-name">
+                                Vladislav Yaremenko
+                            </div>
+                            <div class="person-position">
+                                Lead Researcher
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endif?>             
             </div>        
             <?php
             endif;
