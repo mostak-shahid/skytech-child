@@ -443,8 +443,8 @@ function crb_attach_theme_options() {
         }
         $query = new WP_Query( $options );
         if ( $query->have_posts() ) : ?>
-            <div class="mos-case-study-block-wrapper <?php echo $attributes['className'] ?>">
-                <div class="mos-case-study-block mos-post-grid <?php echo $gap?>">
+            <div class="mos-case-study-block-wrapper case-wrapper <?php echo $attributes['className'] ?>">
+                <div class="mos-case-study-block mos-post-grid <?php echo $gap?>">                    
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?> 
                         <?php
                         $industry = carbon_get_post_meta( get_the_ID(), 'case-study-industry' );

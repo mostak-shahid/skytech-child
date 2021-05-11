@@ -73,12 +73,14 @@ function mos_get_terms ($taxonomy = 'category', $return='all') {
         }
     } else {        
         foreach ($all_taxonomies as $key => $value) {
-            $output[$value['term_id']] = $value['name'];
+            if ($value["taxonomy"] == $taxonomy) {
+                $output[$value['term_id']] = $value['name'];
+            }
         }
     }
     return $output;
 }
-//var_dump(mos_get_terms ('category', 'small'));
+//var_dump(mos_get_terms ('case_study_category', 'small'));
 
 require_once 'astra-custom.php';
 require_once 'hooks.php';
