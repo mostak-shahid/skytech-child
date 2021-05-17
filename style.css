@@ -960,6 +960,31 @@ header.ast-sticky-active {
     content: '\f101';
     margin-left: 10px;
 }
+.va-svg-box {
+    padding: 32px;
+}
+.va-svg-box .mos-svg-block {
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: center;
+    place-content: center center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: -16px;
+    flex-flow: row wrap;
+}
+.va-svg-box .mos-svg-block .svg-part {
+    width: 60px;
+}
+.va-svg-box .mos-svg-block .text-part {
+    width: calc(100% - 60px);
+    padding-left: 16px;
+}
+.va-svg-box .mos-svg-block .text-part>h4 {
+    margin-bottom: 0;
+    font-size: 20px;
+    color: #ffffff;
+}
 .mos-faq-block-wrapper {
     padding: 3em;
     border-left: 2px solid #ffffff;
