@@ -144,7 +144,7 @@ function crb_attach_theme_options() {
     Block::make( __( 'Mos SVG Block' ) )
     ->add_fields( array(
         Field::make( 'text', 'mos-svg-heading', __( 'Heading' ) ),
-        Field::make( 'textarea', 'mos-svg-svg', __( 'SVG Code' ) ),
+        Field::make( 'textarea', 'mos-svg-code', __( 'SVG Code' ) ),
         Field::make( 'rich_text', 'mos-svg-content', __( 'Content' ) ),
         Field::make( 'text', 'mos-svg-btn-title', __( 'Button' ) ),
         Field::make( 'text', 'mos-svg-btn-url', __( 'URL' ) ),
@@ -160,8 +160,8 @@ function crb_attach_theme_options() {
         ?>
         <div class="mos-svg-block-wrapper <?php echo $attributes['className'] ?>">
             <div class="mos-svg-block text-<?php echo esc_html( $fields['mos-svg-alignment'] ) ?>">
-                <?php if ($fields['mos-svg-class']) : ?>
-                <div class="svg-part"><?php echo $fields['mos-svg-class']; ?></div>
+                <?php if ($fields['mos-svg-code']) : ?>
+                <div class="svg-part"><?php echo $fields['mos-svg-code']; ?></div>
                 <?php endif;?>
                 <div class="text-part">
                     <?php if ($fields['mos-svg-heading']) : ?>
