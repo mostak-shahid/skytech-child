@@ -155,7 +155,7 @@ function crb_attach_theme_options() {
                 'center' => 'Center',
             ))
     ))
-    ->set_svg( 'editor-customchar' )
+    ->set_icon( 'editor-customchar' )
     ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
         ?>
         <div class="mos-svg-block-wrapper <?php echo $attributes['className'] ?>">
