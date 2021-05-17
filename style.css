@@ -427,6 +427,14 @@ body { color:#383636!important}
     border-radius: 50%;
     overflow: hidden;
 }
+.service-imagebox .img-part img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 .img-full img,
 .img-style-one img,
 .img-style-two img,
