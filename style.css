@@ -92,6 +92,9 @@ body { color:#383636!important}
 .box-shadow-lg,.img-box-shadow-lg img{box-shadow:0 0 15px 0 rgba(0,0,0,.2)}
 .white-text-shadow{text-shadow:0px 0px 2px #ffffff}
 .black-text-shadow{text-shadow:0px 0px 2px #000000}
+.overlay-zi--1>.uagb-section__overlay{
+    z-index: -1;
+}
 .btn-outline a {
     border-color: var(--first-color)!important;
     color: var(--first-color)!important;
