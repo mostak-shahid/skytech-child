@@ -107,33 +107,6 @@ function crb_attach_theme_options() {
         </div>
         <?php
     });
-    Block::make( __( 'Mos 3 Column CTA' ) )
-    ->add_fields( array(
-        Field::make( 'text', 'mos-3ccta-heading', __( 'Heading' ) ),        
-        Field::make( 'image', 'mos-3ccta-media', __( 'Image' ) ),
-        Field::make( 'text', 'mos-3ccta-link', __( 'Link' ) ),
-        Field::make( 'textarea', 'mos-3ccta-content', __( 'Content' ) ),
-        Field::make( 'image', 'mos-3ccta-bgimage', __( 'Background Image' ) ),
-        Field::make( 'color', 'mos-3ccta-bgcolor', __( 'Background Color' ) ),
-    ))
-    ->set_icon( 'phone' )
-    ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-        ?>
-        <div class="mos-3ccta-wrapper <?php echo $attributes['className'] ?>" style="<?php if ($fields['mos-3ccta-bgcolor']) echo 'background-color:'.esc_html($fields['mos-3ccta-bgcolor']).';' ?><?php if ($fields['mos-3ccta-bgimage']) echo 'background-image:url('.wp_get_attachment_url($fields['mos-3ccta-bgimage']).');' ?>">
-            <div class="mos-3ccta">
-                <div class="call-left">
-                    <h3><?php echo esc_html( $fields['mos-3ccta-heading'] ); ?></h3>
-                </div>
-                <div class="call-center">
-                    <a href="<?php echo esc_url( $fields['mos-3ccta-link'] ); ?>" class="" target="_blank"><?php echo wp_get_attachment_image( $fields['mos-3ccta-media'], 'full' ); ?></a>
-                </div>
-                <div class="call-right">
-                    <div class="desc"><?php echo esc_html( $fields['mos-3ccta-content'] ); ?></div>
-                </div>
-            </div>
-        </div>
-        <?php
-    });
     Block::make( __( 'Mos Icon Block' ) )
     ->add_fields( array(
         Field::make( 'text', 'mos-icon-heading', __( 'Heading' ) ),
@@ -163,6 +136,43 @@ function crb_attach_theme_options() {
                     <?php if ($fields['mos-icon-content']) : ?>
                     <div class="desc"><?php echo  $fields['mos-icon-content']; ?></div>                    
                     <?php endif;?>
+                </div>
+            </div>
+        </div>
+        <?php
+    });
+    Block::make( __( 'Mos SVG Block' ) )
+    ->add_fields( array(
+        Field::make( 'text', 'mos-svg-heading', __( 'Heading' ) ),
+        Field::make( 'textarea', 'mos-svg-svg', __( 'SVG Code' ) ),
+        Field::make( 'rich_text', 'mos-svg-content', __( 'Content' ) ),
+        Field::make( 'text', 'mos-svg-btn-title', __( 'Button' ) ),
+        Field::make( 'text', 'mos-svg-btn-url', __( 'URL' ) ),
+        Field::make( 'select', 'mos-svg-alignment', __( 'Content Alignment' ) )
+            ->set_options( array(
+                'left' => 'Left',
+                'right' => 'Right',
+                'center' => 'Center',
+            ))
+    ))
+    ->set_svg( 'editor-customchar' )
+    ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ?>
+        <div class="mos-svg-block-wrapper <?php echo $attributes['className'] ?>">
+            <div class="mos-svg-block text-<?php echo esc_html( $fields['mos-svg-alignment'] ) ?>">
+                <?php if ($fields['mos-svg-class']) : ?>
+                <div class="svg-part"><?php echo $fields['mos-svg-class']; ?></div>
+                <?php endif;?>
+                <div class="text-part">
+                    <?php if ($fields['mos-svg-heading']) : ?>
+                    <h4><?php echo esc_html( $fields['mos-svg-heading'] ); ?></h4>
+                    <?php endif;?>
+                    <?php if ($fields['mos-svg-content']) : ?>
+                    <div class="desc"><?php echo  $fields['mos-svg-content']; ?></div>                    
+                    <?php endif;?>                 
+                <?php if ($fields['mos-svg-btn-title'] && $fields['mos-svg-btn-url']) :?>   
+                    <div class="wp-block-buttons"><div class="wp-block-button"><a href="<?php echo esc_url( $fields['mos-svg-btn-url'] ); ?>" title="" class="wp-block-button__link"><?php echo esc_html( $fields['mos-svg-btn-title'] ); ?></a></div></div>  
+                <?php endif?> 
                 </div>
             </div>
         </div>
@@ -249,6 +259,33 @@ function crb_attach_theme_options() {
                 <div class="wp-block-buttons"><div class="wp-block-button"><a href="<?php echo esc_html( $fields['mos-pricing-btn-url'] ); ?>" title="" class="wp-block-button__link"><?php echo esc_html( $fields['mos-pricing-btn-title'] ); ?></a></div></div>
                 <?php endif;?>
             
+            </div>
+        </div>
+        <?php
+    });
+    Block::make( __( 'Mos 3 Column CTA' ) )
+    ->add_fields( array(
+        Field::make( 'text', 'mos-3ccta-heading', __( 'Heading' ) ),        
+        Field::make( 'image', 'mos-3ccta-media', __( 'Image' ) ),
+        Field::make( 'text', 'mos-3ccta-link', __( 'Link' ) ),
+        Field::make( 'textarea', 'mos-3ccta-content', __( 'Content' ) ),
+        Field::make( 'image', 'mos-3ccta-bgimage', __( 'Background Image' ) ),
+        Field::make( 'color', 'mos-3ccta-bgcolor', __( 'Background Color' ) ),
+    ))
+    ->set_icon( 'phone' )
+    ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ?>
+        <div class="mos-3ccta-wrapper <?php echo $attributes['className'] ?>" style="<?php if ($fields['mos-3ccta-bgcolor']) echo 'background-color:'.esc_html($fields['mos-3ccta-bgcolor']).';' ?><?php if ($fields['mos-3ccta-bgimage']) echo 'background-image:url('.wp_get_attachment_url($fields['mos-3ccta-bgimage']).');' ?>">
+            <div class="mos-3ccta">
+                <div class="call-left">
+                    <h3><?php echo esc_html( $fields['mos-3ccta-heading'] ); ?></h3>
+                </div>
+                <div class="call-center">
+                    <a href="<?php echo esc_url( $fields['mos-3ccta-link'] ); ?>" class="" target="_blank"><?php echo wp_get_attachment_image( $fields['mos-3ccta-media'], 'full' ); ?></a>
+                </div>
+                <div class="call-right">
+                    <div class="desc"><?php echo esc_html( $fields['mos-3ccta-content'] ); ?></div>
+                </div>
             </div>
         </div>
         <?php
