@@ -648,6 +648,9 @@ header.ast-sticky-active {
 #counter-section .mos-counter-block > h2 + div {
     text-transform:uppercase;
 }
+.mos-image-block .wp-block-button .wp-block-button__link {
+    border-style: none;
+}
 #services-section .mos-image-block-wrapper {
     padding:100px 40px 90px;
     box-shadow:0 0 7px 0 rgba(0,0,0,.2);
