@@ -970,7 +970,6 @@ header.ast-sticky-active {
     place-content: center center;
     -webkit-box-align: center;
     align-items: center;
-    margin: -16px;
     flex-flow: row wrap;
 }
 .va-svg-box .mos-svg-block .svg-part {
