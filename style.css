@@ -97,6 +97,16 @@ body { color:#383636!important}
     color: var(--first-color)!important;
     background-color: transparent!important;
 }
+.btn-outline-alt a {
+    border-color: var(--second-color)!important;
+    color: var(--second-color)!important;
+    background-color: transparent!important;
+}
+.btn-outline-white a {
+    border-color: #ffffff!important;
+    color: #ffffff!important;
+    background-color: transparent!important;
+}
 .btn-transparent-border a {
     border-color: transparent!important;
 }
