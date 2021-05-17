@@ -93,9 +93,9 @@ body { color:#383636!important}
 .white-text-shadow{text-shadow:0px 0px 2px #ffffff}
 .black-text-shadow{text-shadow:0px 0px 2px #000000}
 .btn-outline a {
-    border-color: var(--first-color);
-    color: var(--first-color);
-    background-color: transparent;
+    border: 3px solid var(--first-color)!important;
+    color: var(--first-color)!important;
+    background-color: transparent!important;
 }
 .list-unstyled,.list-inline{padding:0!important;list-style:none;margin:0!important}
 .list-inline>li:not(:last-child){margin-right:.5rem}
