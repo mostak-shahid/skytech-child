@@ -1023,6 +1023,17 @@ header.ast-sticky-active {
 .va-feature-svg-box .text-part .desc > p:last-child {
     margin-bottom: 0;
 } 
+.cm-svg-box {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.cm-svg-box .svg-part {
+    margin-bottom: 15px;
+}
+.cm-svg-box .text-part > h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
 .mos-faq-block-wrapper {
     padding: 3em;
     border-left: 2px solid #ffffff;
