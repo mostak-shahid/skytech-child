@@ -152,6 +152,7 @@ body { color:#383636!important}
     content:'\f046';
     position: relative;
     right: 15px;
+    color: var(--first-color);
 }
 .d-none{display:none!important}
 .d-flex{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex}
