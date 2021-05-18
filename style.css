@@ -188,6 +188,13 @@ body { color:#383636!important}
     background-color:var(--second-color);
     color:#ffffff;
 }
+.divider-img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    margin-top: -60px;
+}
 .case-study-metas .working-areas {
     margin-bottom: 20px!important;
 }
