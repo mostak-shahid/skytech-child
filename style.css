@@ -136,6 +136,23 @@ body { color:#383636!important}
     font-family:'FontAwesome';
     content:'\f046' ' ';
 }
+.tick-list-2 {
+    padding: 0;
+    margin: 0;
+}
+.tick-list-2 li {
+    position: relative;
+    box-shadow: 0 0 6px 0 rgb(0 0 0 / 15%);
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.tick-list-2 li:after {
+    font-family:'FontAwesome';
+    content:'\f046';
+    position: relative;
+    right: 15px;
+}
 .d-none{display:none!important}
 .d-flex{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex}
 .justify-content-between{justify-content:space-between!important}
