@@ -990,6 +990,10 @@ header.ast-sticky-active {
     font-size: 20px;
     color: #ffffff;
 }
+.va-feature-svg-box .svg-part svg {
+    height: 3.375rem;
+    max-width: 3.375rem;
+}
 .mos-faq-block-wrapper {
     padding: 3em;
     border-left: 2px solid #ffffff;
