@@ -994,6 +994,17 @@ header.ast-sticky-active {
     height: 3.375rem;
     max-width: 3.375rem;
 }
+.va-feature-svg-box .text-part h4 {
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.va-feature-svg-box .text-part .desc {
+    margin-top: 10px;
+}
+.va-feature-svg-box .text-part .desc > p:last-child {
+    margin-bottom: 0;
+} 
 .mos-faq-block-wrapper {
     padding: 3em;
     border-left: 2px solid #ffffff;
