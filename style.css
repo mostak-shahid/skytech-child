@@ -33,6 +33,7 @@ body { color:#383636!important}
 .bg-light-gray{background-color:#f1f1f1!important}
 .smooth{-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out}
 .border-theme {border-color: var(--first-color)!important}
+.border-theme-alt {border-color: var(--second-color)!important}
 .hidden-link {
     position:absolute;
     top:0;
