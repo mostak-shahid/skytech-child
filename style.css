@@ -1381,6 +1381,11 @@ header.ast-sticky-active {
 }
 .block-2 .hover-effect-1{
     opacity:1;
+    background-color: #ffffff;
+    border: 1px solid var(--first-color);
+}
+.block-2 .hover-effect-1 .hover-effect-content  {
+    color: #000000;
 }
 .line-filter .filter-content {
     border-left:4px solid #00aeef;
