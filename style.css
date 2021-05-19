@@ -1382,7 +1382,7 @@ header.ast-sticky-active {
 .block-2 .hover-effect-1{
     opacity:1;
     background-color: #ffffff;
-    border: 1px solid var(--first-color);
+    border: 1px solid #dfeff3;
 }
 .block-2 .hover-effect-1 .hover-effect-content  {
     color: #000000;
