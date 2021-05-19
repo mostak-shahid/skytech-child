@@ -1374,9 +1374,10 @@ header.ast-sticky-active {
     padding:20px;
     overflow:hidden;
     bottom:0;
+    color: #ffffff;
 }
 .block-2 .hover-effect-1,.block-2 .hover-effect-1 .hover-effect-content  {
-    position:absolute;
+    position:relative;
 }
 .block-2 .hover-effect-1{
     opacity:1;

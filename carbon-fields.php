@@ -374,8 +374,7 @@ function crb_attach_theme_options() {
                     <div class="item" id="item-<?php echo $slide['_id']?>">
                         <div class="line-filter-outer">                            
                             <div class="line-filter-media">
-                                <?php if ($slide['media']) : 
-    
+                                <?php if ($slide['media']) :     
                                     $width = 370;
                                     $height = 370;
                                     if ($fields['image_size']){
@@ -389,7 +388,7 @@ function crb_attach_theme_options() {
                                 </a>
                                 <?php endif?>
                                 <div class="hover-effect-1">
-                                    <div class="hover-effect-content text-white">
+                                    <div class="hover-effect-content">
                                         <?php echo do_shortcode($slide['desc']) ?>
                                     </div>
                                 </div>
