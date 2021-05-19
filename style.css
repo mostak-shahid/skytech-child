@@ -163,7 +163,7 @@ body { color:#383636!important}
 .align-item-center{align-items:center}
 .d-block{display:block}
 .h-100hv{min-height:100vh}
-.h-100p{min-height:100%}
+.h-100p,.h-100p .uagb-column__inner-wrap {min-height: 100%}
 .mb-0{margin-bottom:0!important}
 .ml-0{margin-left:0!important}
 .mb-5{margin-bottom:5px!important}
