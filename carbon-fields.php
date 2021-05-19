@@ -352,7 +352,7 @@ function crb_attach_theme_options() {
     ->set_icon( 'list-view' )
     ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
         ?>
-        <div class="mos-services-block-wrapper <?php echo $attributes['className'] ?>">
+        <div class="mos-services-block-wrapper <?php echo $fields['mos-services-block-view'] ?> <?php echo $attributes['className'] ?>">
             <?php //var_dump($fields['mos-services-block-grid-sm']) ?>
             <?php if (sizeof($fields['mos-services-block-slider'])) : ?>
             <?php
@@ -369,38 +369,38 @@ function crb_attach_theme_options() {
                 $cls = 'block-view block-view-'.$slidesToScroll.' block-view-md-'.$slidesToScroll_782.' block-view-sm-'.$slidesToScroll_600;
             }
             ?>
-            <div class="mos-services-block text-<?php echo esc_html( $fields['mos-services-block-alignment'] ) ?> <?php echo $cls ?>" data-slick='<?php echo $data_slick ?>'>
+            <div class="mos-services-block text-<?php echo esc_html( $fields['mos-services-block-alignment'] ) ?> <?php echo $cls ?>" data-slick="<?php echo $data_slick ?>">
                 <?php foreach($fields['mos-services-block-slider'] as $slide) : ?>
-                <div class="item" id="item-<?php echo $slide['_id']?>">
-                    <div class="line-filter-outer">
-                        <?php if ($slide['media']) : ?>
-                            <?php        
-                            $width = 370;
-                            $height = 370;
-                            if ($fields['image_size']){
-                                $parts = explode(',',$fields['image_size']);
-                                $width = ($parts[0])?intval($parts[0]):370;
-                                $height = ($parts[1])?intval($parts[1]):370;
-                            }
-                            ?> 
-                        <div class="line-filter-media"> <a href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>"> <img width="<?php echo $width ?>" height="<?php echo $width ?>" src="<?php echo aq_resize(wp_get_attachment_url($slide['media']),$width,$height,true) ?>" class="attachment-industroz-projects-carousel size-industroz-projects-carousel wp-post-image" alt="" loading="lazy"> </a>
-                            <div class="hover-effect-1">
-                                <div class="hover-effect-content text-white">
-                                    <?php echo do_shortcode($slide['desc']) ?>
+                    <div class="item" id="item-<?php echo $slide['_id']?>">
+                        <div class="line-filter-outer">
+                            <?php if ($slide['media']) : ?>
+                                <?php        
+                                $width = 370;
+                                $height = 370;
+                                if ($fields['image_size']){
+                                    $parts = explode(',',$fields['image_size']);
+                                    $width = ($parts[0])?intval($parts[0]):370;
+                                    $height = ($parts[1])?intval($parts[1]):370;
+                                }
+                                ?> 
+                            <div class="line-filter-media"> <a href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>"> <img width="<?php echo $width ?>" height="<?php echo $width ?>" src="<?php echo aq_resize(wp_get_attachment_url($slide['media']),$width,$height,true) ?>" class="attachment-industroz-projects-carousel size-industroz-projects-carousel wp-post-image" alt="" loading="lazy"> </a>
+                                <div class="hover-effect-1">
+                                    <div class="hover-effect-content text-white">
+                                        <?php echo do_shortcode($slide['desc']) ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endif?>
+                            <div class="line-filter bg-theme p-30">
+                                <div class="filter-content">
+                                    <h3 class="mb-0 text-capitalize mos-services-block-title"> <a class="text-white" href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>"><?php echo do_shortcode($slide['title']) ?></a></h3>
+                                    <?php if ($slide['btn-title']) : ?> 
+                                    <a href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>" class="site-button-link mt-10 text-white"><?php echo $slide['btn-title'] ?></a>
+                                    <?php endif;?>
                                 </div>
                             </div>
                         </div>
-                        <?php endif?>
-                        <div class="line-filter bg-theme p-30">
-                            <div class="filter-content">
-                                <h3 class="mb-0 text-capitalize mos-services-block-title"> <a class="text-white" href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>"><?php echo do_shortcode($slide['title']) ?></a></h3>
-                                <?php if ($slide['btn-title']) : ?> 
-                                <a href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>" class="site-button-link mt-10 text-white"><?php echo $slide['btn-title'] ?></a>
-                                <?php endif;?>
-                            </div>
-                        </div>
                     </div>
-                </div>
                 <?php endforeach;?>
             </div>
             <?php endif;?>
