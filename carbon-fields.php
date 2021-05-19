@@ -92,10 +92,11 @@ function crb_attach_theme_options() {
         ?>
         <div class="mos-image-block-wrapper <?php echo $attributes['className'] ?>">
             <div class="mos-image-block text-<?php echo esc_html( $fields['mos-image-alignment'] ) ?>">
-                <div class="img-part"><?php echo wp_get_attachment_image( $fields['mos-image-media'], 'full' ); ?></div>
+                <?php if ($fields['mos-image-media']) : ?>
+                    <div class="img-part"><?php echo wp_get_attachment_image( $fields['mos-image-media'], 'full' ); ?></div>
+                <?php endif?>
                 <div class="text-part">
                     <h4><?php echo esc_html( $fields['mos-image-heading'] ); ?></h4>
-<!--                    <hr style="background-color: <?php echo esc_html( $fields['mos-image-hr'] ) ?>;">-->
                 <?php if ($fields['mos-image-content']) :?>
                     <div class="desc"><?php echo apply_filters( 'the_content', $fields['mos-image-content'] ); ?></div> 
                 <?php endif?>                 
