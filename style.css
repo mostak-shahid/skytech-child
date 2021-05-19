@@ -1375,6 +1375,12 @@ header.ast-sticky-active {
     overflow:hidden;
     bottom:0;
 }
+.block-2 .hover-effect-1,.block-2 .hover-effect-1 .hover-effect-content  {
+    position:absolute;
+}
+.block-2 .hover-effect-1{
+    opacity:1;
+}
 .line-filter .filter-content {
     border-left:4px solid #00aeef;
     padding-left:20px;
