@@ -299,6 +299,7 @@ function crb_attach_theme_options() {
         ->set_options( array(
             'carousel' => 'Slider',
             'block' => 'Block',
+            'block-2' => 'Basic Block',
         )),
         Field::make( 'select', 'mos-services-block-grid', __( 'Large Device Grid' ) )
         ->set_options( array(
