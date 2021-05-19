@@ -372,25 +372,29 @@ function crb_attach_theme_options() {
             <div class="mos-services-block text-<?php echo esc_html( $fields['mos-services-block-alignment'] ) ?> <?php echo $cls ?>" data-slick="<?php echo $data_slick ?>">
                 <?php foreach($fields['mos-services-block-slider'] as $slide) : ?>
                     <div class="item" id="item-<?php echo $slide['_id']?>">
-                        <div class="line-filter-outer">
-                            <?php if ($slide['media']) : ?>
-                                <?php        
-                                $width = 370;
-                                $height = 370;
-                                if ($fields['image_size']){
-                                    $parts = explode(',',$fields['image_size']);
-                                    $width = ($parts[0])?intval($parts[0]):370;
-                                    $height = ($parts[1])?intval($parts[1]):370;
-                                }
-                                ?> 
-                            <div class="line-filter-media"> <a href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>"> <img width="<?php echo $width ?>" height="<?php echo $width ?>" src="<?php echo aq_resize(wp_get_attachment_url($slide['media']),$width,$height,true) ?>" class="attachment-industroz-projects-carousel size-industroz-projects-carousel wp-post-image" alt="" loading="lazy"> </a>
+                        <div class="line-filter-outer">                            
+                            <div class="line-filter-media">
+                                <?php if ($slide['media']) : 
+    
+                                    $width = 370;
+                                    $height = 370;
+                                    if ($fields['image_size']){
+                                        $parts = explode(',',$fields['image_size']);
+                                        $width = ($parts[0])?intval($parts[0]):370;
+                                        $height = ($parts[1])?intval($parts[1]):370;
+                                    }
+                                ?>  
+                                <a class="d-block" href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>">
+                                    <img width="<?php echo $width ?>" height="<?php echo $height ?>" src="<?php echo aq_resize(wp_get_attachment_url($slide['media']),$width,$height,true) ?>" class="attachment-industroz-projects-carousel size-industroz-projects-carousel wp-post-image" alt="" loading="lazy">
+                                </a>
+                                <?php endif?>
                                 <div class="hover-effect-1">
                                     <div class="hover-effect-content text-white">
                                         <?php echo do_shortcode($slide['desc']) ?>
                                     </div>
                                 </div>
                             </div>
-                            <?php endif?>
+                            
                             <div class="line-filter bg-theme p-30">
                                 <div class="filter-content">
                                     <h3 class="mb-0 text-capitalize mos-services-block-title"> <a class="text-white" href="<?php echo ($slide['btn-url'])?$slide['btn-url']:'#' ?>"><?php echo do_shortcode($slide['title']) ?></a></h3>
