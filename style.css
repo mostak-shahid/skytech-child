@@ -1377,6 +1377,11 @@ header.ast-sticky-active {
     width: 45px;
     border-radius: 50%;
 }
+.ie-mos-box .text-part > h4 {
+    background-color: whitesmoke;
+    color: #000000;
+    padding: 15px;
+}
 .get_in_touch{background-color:#2e96db;padding:25px 20px 25px 30px;background-repeat:no-repeat;background-position:right bottom;margin-bottom:1.6em}
 .get_in_touch, .get_in_touch a, .get_in_touch h3, .get_in_touch ul{color:#fff!important}
 .get_in_touch ul{margin:0}
