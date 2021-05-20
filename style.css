@@ -1339,6 +1339,40 @@ header.ast-sticky-active {
 .mos-image-block.text-right .wp-block-buttons {
     justify-content: flex-end;
 }
+.hover-content .mos-image-block .text-part {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    -webkit-transition:all .3s ease-out;
+    -moz-transition:all .3s ease-out;
+    -o-transition:all .3s ease-out;
+    transition:all .3s ease-out
+}
+.hover-content .mos-image-block:hover .text-part {
+    opacity: 1;
+}
+.hover-content .mos-image-block .text-part>h4 {
+    font-size: 26px;
+}
+.hover-content .mos-image-block .text-part>h4,.hover-content .mos-image-block .text-part .desc {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+.hover-content .mos-image-block .text-part .wp-block-button .wp-block-button__link {
+    padding: 14px;
+    width: 45px;
+    border-radius: 50%;
+}
 .get_in_touch{background-color:#2e96db;padding:25px 20px 25px 30px;background-repeat:no-repeat;background-position:right bottom;margin-bottom:1.6em}
 .get_in_touch, .get_in_touch a, .get_in_touch h3, .get_in_touch ul{color:#fff!important}
 .get_in_touch ul{margin:0}
