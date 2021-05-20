@@ -19,7 +19,7 @@ function crb_attach_theme_options() {
                 ->set_storage_format( 'Y-m-d' ),
             Field::make( 'text', 'event-location', __( 'Event Location' ) ),
         ));
-    Container::make( 'post_meta', 'Job Data' )
+    /*Container::make( 'post_meta', 'Job Data' )
         ->where( 'post_type', '=', 'job' )
         ->add_fields( array(
             Field::make( 'select', 'job-job-type', __( 'Job Type' ) )
@@ -71,7 +71,7 @@ function crb_attach_theme_options() {
                     Field::make( 'image', 'case-study-team-image', __( 'Image' ) ),
                 )),
             
-        ));
+        ));*/
     Block::make( __( 'Mos Image Block' ) )
     ->add_fields( array(
         Field::make( 'text', 'mos-image-heading', __( 'Heading' ) ),
@@ -465,15 +465,6 @@ function crb_attach_theme_options() {
         $options = array(
             'post_type' => 'case-study'
         );  
-        /*
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'people',
-            'field'    => 'slug',
-            'terms'    => 'bob',
-        ),
-    ),        
-        */
         if (@$fields['mos-case-study-block-categories'] && sizeof($fields['mos-case-study-block-categories'])) {
             //$options['category__in'] = $fields['mos-case-study-block-categories'];
             $options['tax_query'][] = array(
@@ -536,6 +527,38 @@ function crb_attach_theme_options() {
             </div>
         <?php endif;
         wp_reset_postdata();
+    });
+    Block::make( __( 'Mos Before After Block' ) )
+    ->add_fields( array(
+        Field::make( 'image', 'before_image', __( 'Before Image' ) ),
+        Field::make( 'image', 'after_image', __( 'After Image' ) ),
+        Field::make( 'text', 'before_text', __( 'Before Text' ) ),
+        Field::make( 'text', 'after_text', __( 'After Text' ) ),
+    ))
+    ->set_icon( 'format-gallery' )
+    ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ?>
+        <div class="mos-beforeafter-block-wrapper <?php echo $attributes['className'] ?>">
+            <div class="mos-beforeafter-block">
+                <?php if ($fields['before_image'] && $fields['after_image']) : ?>
+                <?php
+                $before_alt = get_post_meta($fields['before_image'], '_wp_attachment_image_alt', TRUE);
+                $before_text = ($fields['before_text'])?$fields['before_text']:'Before';
+                $after_alt = get_post_meta($fields['after_image'], '_wp_attachment_image_alt', TRUE);
+                $after_text = ($fields['after_text'])?$fields['after_text']:'After';                 
+                ?>
+                <div  class="beer-slider" data-beer-label="<?php echo $before_text ?>" data-start="50">
+                    <?php echo wp_get_attachment_image( $fields['before_image'], 'full', false, ['class'=>'before-image'] ); ?>
+                    <div class="beer-reveal" data-beer-label="<?php echo $after_text ?>">                        
+                        <?php echo wp_get_attachment_image( $fields['after_image'], 'full', false, ['class'=>'after-image'] ); ?>
+                    </div>
+                </div>
+                <?php else : ?>
+                <div class="text-center border rounded-3 p-10">Please add before and after images for this section</div>
+                <?php endif?>
+            </div>
+        </div>
+        <?php
     });
 }
 add_action( 'after_setup_theme', 'crb_load' );

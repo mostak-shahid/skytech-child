@@ -28,10 +28,11 @@ function child_enqueue_styles() {
     wp_enqueue_style( 'fancybox', get_stylesheet_directory_uri() . '/plugins/fancybox/jquery.fancybox.min.css' );
     wp_enqueue_script('fancybox', get_stylesheet_directory_uri() . '/plugins/fancybox/jquery.fancybox.min.js', 'jquery');
     wp_enqueue_style( 'slick', 'https://kenwheeler.github.io/slick/slick/slick.css' );
-    //wp_enqueue_style( 'slick-theme', 'https://kenwheeler.github.io/slick/slick/slick-theme.css' );
-    wp_enqueue_script('slick', 'https://kenwheeler.github.io/slick/slick/slick.js', 'jquery');
+    wp_enqueue_script('slick', 'https://kenwheeler.github.io/slick/slick/slick.js', 'jquery');    
     
-    //wp_enqueue_script('numscroller', get_stylesheet_directory_uri() . '/plugins/numscroller.js', 'jquery');
+    wp_enqueue_style( 'BeerSlider', get_stylesheet_directory_uri() . '/plugins/BeerSlider/BeerSlider.css' );
+    wp_enqueue_script('BeerSlider', get_stylesheet_directory_uri() . '/plugins/BeerSlider/BeerSlider.js', 'jquery');
+    
     wp_enqueue_script('jquery.waypoints.min', get_stylesheet_directory_uri() . '/plugins/jquery.counterup/jquery.waypoints.min.js', 'jquery');
     wp_enqueue_script('jquery.counterup', get_stylesheet_directory_uri() . '/plugins/jquery.counterup/jquery.counterup.js', 'jquery');
     

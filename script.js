@@ -5,10 +5,20 @@ jQuery(document).ready(function($){
 		} else {
 			$('.mos-sticky-header').removeClass('tiny');
 		}
-	});    
-    $('.jarallax').jarallax({
-        speed: 0.2
-    });
+	});  
     $('.slick-slider').slick();
     $('.counter').counterUp();
+
+    $.fn.BeerSlider = function (options) {
+        options = options || {};
+        return this.each(function () {
+            new BeerSlider(this, options);
+        });
+    };
+    $(".beer-slider").each(function (index, el) {
+        $(el).BeerSlider({
+            start: $(el).data("start")
+        })
+    });
+    
 });
