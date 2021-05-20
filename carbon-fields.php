@@ -19,7 +19,7 @@ function crb_attach_theme_options() {
                 ->set_storage_format( 'Y-m-d' ),
             Field::make( 'text', 'event-location', __( 'Event Location' ) ),
         ));
-    /*Container::make( 'post_meta', 'Job Data' )
+    Container::make( 'post_meta', 'Job Data' )
         ->where( 'post_type', '=', 'job' )
         ->add_fields( array(
             Field::make( 'select', 'job-job-type', __( 'Job Type' ) )
@@ -71,7 +71,7 @@ function crb_attach_theme_options() {
                     Field::make( 'image', 'case-study-team-image', __( 'Image' ) ),
                 )),
             
-        ));*/
+        ));
     Block::make( __( 'Mos Image Block' ) )
     ->add_fields( array(
         Field::make( 'text', 'mos-image-heading', __( 'Heading' ) ),
