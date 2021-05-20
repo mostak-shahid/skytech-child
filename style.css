@@ -1339,6 +1339,10 @@ header.ast-sticky-active {
 .mos-image-block.text-right .wp-block-buttons {
     justify-content: flex-end;
 }
+.hover-content .mos-image-block .img-part img {
+    width: 100%;
+    height: auto;
+}
 .hover-content .mos-image-block .text-part {
     position: absolute;
     z-index: 1;
