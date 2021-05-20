@@ -103,7 +103,7 @@ function crb_attach_theme_options() {
                         <div class="desc"><?php echo apply_filters( 'the_content', $fields['mos-image-content'] ); ?></div> 
                     <?php endif?>                 
                     <?php if ($fields['mos-image-btn-title'] && $fields['mos-image-btn-url']) :?>   
-                        <div class="wp-block-buttons"><div class="wp-block-button"><a href="<?php echo esc_url( $fields['mos-image-btn-url'] ); ?>" title="" class="wp-block-button__link"><?php echo esc_html( $fields['mos-image-btn-title'] ); ?></a></div></div>  
+                        <div class="wp-block-buttons"><div class="wp-block-button"><a href="<?php echo esc_url( $fields['mos-image-btn-url'] ); ?>" title="" class="wp-block-button__link"><?php echo do_shortcode( $fields['mos-image-btn-title'] ); ?></a></div></div>  
                     <?php endif?>                 
                 </div>
             </div>
