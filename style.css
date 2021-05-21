@@ -642,7 +642,7 @@ header.ast-sticky-active {
     -webkit-backdrop-filter:blur(10px);
     backdrop-filter:blur(10px);
 }
-#banner-section h2.banner-title {
+#banner-section .banner-title {
     line-height:1;
 }
 #banner-section .uagb-columns__inner-wrap {padding-top:10vw;padding-bottom:10vw}
@@ -1509,7 +1509,7 @@ header.ast-sticky-active {
     color:var(--first-color);
 }
 @media (max-width:1400px){
-    #banner-section h2.banner-title,#video-section h2 {
+    #banner-section .banner-title,#video-section h2 {
         font-size:60px!important;
     }
 }
@@ -1586,7 +1586,7 @@ header.ast-sticky-active {
     }
 }
 @media (max-width:599.98px){ 
-    #banner-section h2.banner-title,#video-section h2 {
+    #banner-section .banner-title,#video-section h2 {
          font-size:50px!important; 
     }
     .mos-services-block.block-view.block-view-sm-1 .item {
@@ -1634,7 +1634,7 @@ header.ast-sticky-active {
     }
 }
 @media (max-width:479.98px){
-    #banner-section h2.banner-title,#video-section h2 {
+    #banner-section .banner-title,#video-section h2 {
          font-size:40px!important; 
     }
     section.wp-block-uagb-columns {
