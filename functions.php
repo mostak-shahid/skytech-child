@@ -45,22 +45,16 @@ function child_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 
 
-function mos_get_posts($post_type = 'post',$posts_per_page='-1', $post_status = array('publish')){
-    $args = array(
-        'post_type' => $post_type,
-        'posts_per_page' => $posts_per_page,
-        'post_status' => $post_status,
-    );
-    $output = [];
-    $query = new WP_Query( $args );
-    if ( $query->have_posts() ) {
-        while ( $query->have_posts() ) { $query->the_post();
-            $output[get_the_ID()] = get_the_title();
-        }
+function mos_get_posts($post_type = 'post', $post_status = 'publish'){
+    global $wpdb;
+    $output = array();
+    $all_posts = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}posts WHERE post_status = '{$post_status}' AND post_type = '{$post_type}'" );          
+    foreach ($all_posts as $key => $value) {
+        $output[$value->ID] = $value->post_title;
     }
-    wp_reset_postdata();    
     return $output;
 }
+//var_dump(mos_get_posts ('case-study'));
 
 function mos_get_terms ($taxonomy = 'category', $return='all') {
     global $wpdb;

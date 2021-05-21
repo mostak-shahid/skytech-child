@@ -440,9 +440,9 @@ function crb_attach_theme_options() {
     ->add_fields( array(
         Field::make( 'text', 'mos-case-study-block-nop', __( 'No of Posts' ) ),
         Field::make( 'multiselect', 'mos-case-study-block-posts', __( 'Select Posts' ) )
-            ->add_options( mos_get_posts('case-study')),
+            ->set_options( mos_get_posts('case-study')),            
         Field::make( 'multiselect', 'mos-case-study-block-categories', __( 'Select Categories' ) )
-            ->add_options( mos_get_terms ('case_study_category', 'small')),
+            ->set_options( mos_get_terms ('case_study_category', 'small')),
 
         Field::make( 'select', 'mos-case-study-block-grid', __( 'Grid' ) )
             ->set_options( array(
