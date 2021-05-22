@@ -1540,6 +1540,10 @@ header.ast-sticky-active {
 }
 @media (max-width:782px){
     .mt-sm-0{margin-top: 0!important}
+    .va-image-box{
+        border: 1px solid #dee2e6;
+    }
+    .divider-img {display: none;}
     .single-post .post-autor-details {
         display:block;
         text-align:center;
