@@ -1380,6 +1380,11 @@ header.ast-sticky-active {
     width: 45px;
     border-radius: 50%;
 }
+
+.ie-mos-box .img-part img {
+    width: 100%;
+    height: auto;
+}
 .ie-mos-box .text-part > h4 {
     background-color: whitesmoke;
     color: #000000;
