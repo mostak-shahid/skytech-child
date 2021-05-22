@@ -1592,6 +1592,9 @@ header.ast-sticky-active {
         bottom: 0;
         right: 0;
     }
+    .mos-event-post-wrapper .event-list.grid .event-list-item {
+        width: 100%;
+    }
     
 }
 @media (max-width:768.98px){    
