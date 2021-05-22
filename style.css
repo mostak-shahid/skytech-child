@@ -1585,6 +1585,13 @@ header.ast-sticky-active {
         padding-top:30px;
         padding-bottom:30px;
     }
+    #whyus-section .mos-image-block-wrapper:before {
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        bottom: 0;
+        right: 0;
+    }
     
 }
 @media (max-width:768.98px){    
