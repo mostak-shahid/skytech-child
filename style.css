@@ -1112,6 +1112,23 @@ header.ast-sticky-active {
     content: 'A';
     background-color: black;
 }
+.mos-svg-block-wrapper.contact-phone-svg-block .mos-svg-block {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+}
+.mos-svg-block-wrapper.contact-phone-svg-block .mos-svg-block .text-part {
+    padding: 0 15px;
+}
+.mos-svg-block-wrapper.contact-phone-svg-block .mos-svg-block .text-part .desc {
+    font-size: 30px;
+}
+.mos-svg-block-wrapper.contact-phone-svg-block .mos-svg-block .text-part .desc p:last-child {
+    margin-bottom: 0;
+}
 .faq-content {
     height: 100%;
 }
