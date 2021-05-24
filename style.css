@@ -849,7 +849,7 @@ header.ast-sticky-active {
 #steps-section .mos-image-block-wrapper .mos-image-block .text-part .desc p:last-child{
     margin-bottom:0!important;
 }
-#contact-form-section .mos-image-block-wrapper .mos-image-block {
+.mos-image-block-wrapper.contact-img-box-2 .mos-image-block {
     display:-webkit-flex;
     display:-moz-flex;
     display:-ms-flex;
@@ -860,16 +860,16 @@ header.ast-sticky-active {
     border-bottom:1px solid #eeeeee;
     height:100%;
 }
-#contact-form-section .mos-image-block-wrapper .mos-image-block .img-part img{
+.mos-image-block-wrapper.contact-img-box-2 .mos-image-block .img-part img{
     width:60px;
     height:auto;
 }
-#contact-form-section .mos-image-block-wrapper .mos-image-block .text-part{padding-left:30px}
-#contact-form-section .mos-image-block-wrapper .mos-image-block .text-part>h4{margin-bottom:5px}
-#contact-form-section .mos-image-block-wrapper .mos-image-block .text-part .desc p:last-child{
+.mos-image-block-wrapper.contact-img-box-2 .mos-image-block .text-part{padding-left:30px}
+.mos-image-block-wrapper.contact-img-box-2 .mos-image-block .text-part>h4{margin-bottom:5px}
+.mos-image-block-wrapper.contact-img-box-2 .mos-image-block .text-part .desc p:last-child{
     margin-bottom:0!important;
 }
-#contact-form-section .mos-image-block-wrapper .mos-image-block a{color:#000000}
+.mos-image-block-wrapper.contact-img-box-2 .mos-image-block a{color:#000000}
 #map-section .map-overlay-form {
     position:absolute;
     z-index:1;
