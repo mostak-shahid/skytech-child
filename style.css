@@ -849,6 +849,23 @@ header.ast-sticky-active {
 #steps-section .mos-image-block-wrapper .mos-image-block .text-part .desc p:last-child{
     margin-bottom:0!important;
 }
+.mos-image-block-wrapper.contact-image-box .mos-image-block {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+}
+.mos-image-block-wrapper.contact-image-box .mos-image-block .text-part{
+    padding: 15px;    
+}
+.mos-image-block-wrapper.contact-image-box .mos-image-block .text-part>h4{
+    margin-bottom: 0;  
+}
+.mos-image-block-wrapper.contact-image-box .mos-image-block .text-part .desc{
+    margin-top: 10px;  
+}
 .mos-image-block-wrapper.contact-img-box-2 .mos-image-block {
     display:-webkit-flex;
     display:-moz-flex;
