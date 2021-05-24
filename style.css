@@ -862,6 +862,7 @@ header.ast-sticky-active {
 }
 .mos-image-block-wrapper.contact-image-box .mos-image-block .text-part>h4{
     margin-bottom: 0;  
+    font-size: 24px;
 }
 .mos-image-block-wrapper.contact-image-box .mos-image-block .text-part .desc{
     margin-top: 10px;  
