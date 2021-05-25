@@ -859,7 +859,11 @@ header.ast-sticky-active {
     display: flex;
     align-items: center;
 }
+.mos-image-block-wrapper.contact-image-box .mos-image-block .img-part {
+    flex: 0 0 100px;
+}
 .mos-image-block-wrapper.contact-image-box .mos-image-block .text-part{
+    flex: 1;
     padding: 15px;    
 }
 .mos-image-block-wrapper.contact-image-box .mos-image-block .text-part>h4{
