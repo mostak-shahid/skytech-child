@@ -1646,6 +1646,9 @@ header.ast-sticky-active {
     .mos-post-block [class^="ast-post-format"] {
         flex-direction: column;
     }
+    .mos-post-block .post-content {
+        text-align: left;
+    }
 }
 @media (max-width:599.98px){ 
     #banner-section .banner-title,#video-section h2 {
