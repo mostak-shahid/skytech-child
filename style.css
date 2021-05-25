@@ -635,7 +635,7 @@ body.job-template-default .last-appply-btn,body.event-template-default .mos-even
     margin-bottom:0;
 }
 .mos-post-block .post-content {
-    padding-right:2em;
+    padding:2em;
     text-align:justify;
 }
 header.ast-sticky-active {
