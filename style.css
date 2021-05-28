@@ -122,7 +122,7 @@ body { color:#383636!important}
 }
 .list-featured li{
     margin-bottom:10px!important;
-    padding-bottom: 10px;
+    padding-left: 10px;
 }
 .list-featured li::marker {
     content:'\f046' ' ';
