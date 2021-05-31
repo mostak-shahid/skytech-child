@@ -1587,6 +1587,7 @@ header.ast-sticky-active {
     z-index: 9;
     position: absolute;
     top: 50%;
+    margin-top: -15px;
     opacity: 0;
     -webkit-transition:all .3s ease-out;
     -moz-transition:all .3s ease-out;
