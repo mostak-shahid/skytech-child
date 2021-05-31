@@ -900,6 +900,17 @@ header.ast-sticky-active {
     margin-bottom:0!important;
 }
 .mos-image-block-wrapper.contact-img-box-2 .mos-image-block a{color:#000000}
+.rating-image-block .mos-image-block {
+    display: flex;
+    align-items: center;
+}
+.rating-image-block .mos-image-block .img-part {
+    width: 230px;
+}
+.rating-image-block .mos-image-block .text-part {
+    padding-left: 30px;
+    padding-right: 30px;
+}
 #map-section .map-overlay-form {
     position:absolute;
     z-index:1;
