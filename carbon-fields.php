@@ -369,7 +369,7 @@ function crb_attach_theme_options() {
                 $cls = 'block-view block-view-'.$slidesToScroll.' block-view-md-'.$slidesToScroll_782.' block-view-sm-'.$slidesToScroll_600;
             }
             ?>
-            <div class="mos-services-block text-<?php echo esc_html( $fields['mos-services-block-alignment'] ) ?> <?php echo $cls ?>" data-slick="<?php echo $data_slick ?>">
+            <div class="mos-services-block text-<?php echo esc_html( $fields['mos-services-block-alignment'] ) ?> <?php echo $cls ?>" data-slick='<?php echo $data_slick ?>'>
                 <?php foreach($fields['mos-services-block-slider'] as $slide) : ?>
                     <div class="item" id="item-<?php echo $slide['_id']?>">
                         <div class="line-filter-outer">                            
@@ -557,6 +557,88 @@ function crb_attach_theme_options() {
                 <div class="text-center border rounded-3 p-10">Please add before and after images for this section</div>
                 <?php endif?>
             </div>
+        </div>
+        <?php
+    });
+    Block::make( __( 'Mos Image carousel Block' ) )
+    ->add_fields( array(
+        Field::make( 'select', 'image-carousel-grid', __( 'Large Device Grid' ) )
+        ->set_options( array(
+            '1' => 'Single Column',
+            '2' => 'Two Column',
+            '3' => 'Three Column',
+            '4' => 'Four Column',
+            '5' => 'Five Column',
+        )),
+        Field::make( 'select', 'image-carousel-grid-md', __( 'Medium Device Grid' ) )
+        ->set_options( array(
+            '1' => 'Single Column',
+            '2' => 'Two Column',
+            '3' => 'Three Column',
+            '4' => 'Four Column',
+            '5' => 'Five Column',
+        )),
+        Field::make( 'select', 'image-carousel-grid-sm', __( 'Small Device Grid' ) )
+        ->set_options( array(
+            '1' => 'Single Column',
+            '2' => 'Two Column',
+            '3' => 'Three Column',
+            '4' => 'Four Column',
+            '5' => 'Five Column',
+        )),
+        Field::make( 'select', 'image-carousel-autoplay', __( 'Autoplay' ) )
+        ->set_options( array(
+            'true' => 'Enable',
+            'false' => 'Disable'
+        )),
+        Field::make( 'text', 'image-carousel-autoplay-speed', __( 'Autoplay Speed' ) )
+            ->set_attribute( 'placeholder', '2000' ),
+        Field::make( 'text', 'image_size', __( 'Image Size' ) )
+            ->set_attribute( 'placeholder', 'width,height. Ex: 370,370' ),
+        Field::make( 'complex', 'image-carousel-slider', __( 'Services' ) )
+            ->add_fields( array(
+                Field::make( 'image', 'media', __( 'Image' ) ),
+                Field::make( 'text', 'btn-url', __( 'URL' ) ),
+            )),
+        Field::make( 'select', 'image-carousel-alignment', __( 'Content Alignment' ) )
+        ->set_options( array(
+            'left' => 'Left',
+            'right' => 'Right',
+            'center' => 'Center',
+        ))
+    ))
+    ->set_icon( 'format-gallery' )
+    ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
+        ?>
+        <div class="mos-image-carousel-block-wrapper <?php echo $attributes['className'] ?>">
+            
+            <?php if (sizeof($fields['image-carousel-slider'])) : ?>
+            <?php
+            $data_slick = 'slick-slider';
+            $slidesToScroll = ($fields['image-carousel-grid'])?$fields['image-carousel-grid']:1;
+            $slidesToScroll_782 = ($fields['image-carousel-grid-md'])?$fields['image-carousel-grid-md']:1;
+            $slidesToScroll_600 = ($fields['image-carousel-grid-sm'])?$fields['image-carousel-grid-sm']:1;
+        
+            $autoplay = ($fields['image-carousel-autoplay'])?$fields['image-carousel-autoplay']:true;
+            $autoplaySpeed = ($fields['image-carousel-autoplay-speed'])?$fields['image-carousel-autoplay-speed']:2000;
+            $cls = 'slick-slider';
+            $data_slick = '{"slidesToShow": '.$slidesToScroll.',"slidesToScroll": '.$slidesToScroll.',"autoplay": '.$autoplay.',"autoplaySpeed": '.$autoplaySpeed.',"dots": true,"arrows":false,"responsive": [{"breakpoint": 782,"settings": {"slidesToShow": '.$slidesToScroll_782.',"slidesToScroll": '.$slidesToScroll_782.'}},{"breakpoint": 600,"settings": {"arrows": true,"dots": false,"slidesToShow": '.$slidesToScroll_600.',"slidesToScroll": '.$slidesToScroll_600.'}}]}';
+            
+            ?>
+            <div class="mos-beforeafter-block text-<?php echo esc_html( $fields['image-carousel-alignment'] ) ?> <?php echo $cls ?>" data-slick='<?php echo $data_slick ?>'>
+                <?php //$image_alt = get_post_meta($fields['image-carousel-image'], '_wp_attachment_image_alt', TRUE);?>
+                <?php foreach($fields['image-carousel-slider'] as $slide) : ?>
+                    <?php if ($slide['media']) : ?>
+                    <div class="item position-relative" id="item-<?php echo $slide['_id']?>">
+                        <?php echo wp_get_attachment_image($slide['media'],'full',false,array('class'=>'slick-item-img'))?>
+                        <?php if ($slide['btn-url']) :?>
+                            <a href="<?php echo esc_url(do_shortcode($slide['btn-url'])); ?>" class="hidden-link"></a>
+                        <?php endif?>
+                    </div>
+                    <?php endif?>
+                <?php endforeach;?>
+            </div>
+            <?php endif;?>
         </div>
         <?php
     });
