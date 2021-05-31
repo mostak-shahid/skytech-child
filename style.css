@@ -1608,6 +1608,9 @@ header.ast-sticky-active {
 .mos-image-carousel-block:hover .slick-next {
     right: 0;
 }
+.mos-image-carousel-block .slick-slide img {
+    display: inline-block;
+}
 @media (max-width:1400px){
     #banner-section .banner-title,#video-section h2 {
         font-size:60px!important;
