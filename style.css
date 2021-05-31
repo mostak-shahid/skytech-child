@@ -1578,6 +1578,36 @@ header.ast-sticky-active {
 .slick-slider .slick-dots li.slick-active button:before{
     color:var(--first-color);
 }
+.mos-image-carousel-block .slick-arrow {
+    padding: 0;
+    font-size: 30px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    z-index: 9;
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    -webkit-transition:all .3s ease-out;
+    -moz-transition:all .3s ease-out;
+    -o-transition:all .3s ease-out;
+    transition:all .3s ease-out
+}
+.mos-image-carousel-block .slick-prev {
+    left: -30px;
+}
+.mos-image-carousel-block .slick-next {
+    right: -30px;
+}
+.mos-image-carousel-block:hover .slick-arrow {
+    opacity: 1;
+}
+.mos-image-carousel-block:hover .slick-prev {
+    left: 0;
+}
+.mos-image-carousel-block:hover .slick-next {
+    right: 0;
+}
 @media (max-width:1400px){
     #banner-section .banner-title,#video-section h2 {
         font-size:60px!important;

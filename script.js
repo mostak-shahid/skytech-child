@@ -7,6 +7,8 @@ jQuery(document).ready(function($){
 		}
 	});  
     $('.slick-slider').slick();
+    $('.slick-prev.slick-arrow').html('<i class="fa fa-angle-left"></i>');
+    $('.slick-next.slick-arrow').html('<i class="fa fa-angle-right"></i>');
     $('.counter').counterUp();
 
     $.fn.BeerSlider = function (options) {

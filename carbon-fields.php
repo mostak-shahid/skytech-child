@@ -620,10 +620,10 @@ function crb_attach_theme_options() {
             $autoplay = ($fields['image-carousel-autoplay'])?$fields['image-carousel-autoplay']:true;
             $autoplaySpeed = ($fields['image-carousel-autoplay-speed'])?$fields['image-carousel-autoplay-speed']:2000;
             $cls = 'slick-slider';
-            $data_slick = '{"slidesToShow": '.$slidesToScroll.',"slidesToScroll": '.$slidesToScroll.',"autoplay": '.$autoplay.',"autoplaySpeed": '.$autoplaySpeed.',"dots": true,"arrows":false,"responsive": [{"breakpoint": 782,"settings": {"slidesToShow": '.$slidesToScroll_782.',"slidesToScroll": '.$slidesToScroll_782.'}},{"breakpoint": 600,"settings": {"arrows": true,"dots": false,"slidesToShow": '.$slidesToScroll_600.',"slidesToScroll": '.$slidesToScroll_600.'}}]}';
+            $data_slick = '{"slidesToShow": '.$slidesToScroll.',"slidesToScroll": 1,"autoplay": '.$autoplay.',"autoplaySpeed": '.$autoplaySpeed.',"dots": false,"arrows":true,"responsive": [{"breakpoint": 782,"settings": {"slidesToShow": '.$slidesToScroll_782.',"slidesToScroll": 1}},{"breakpoint": 600,"settings": {"arrows": true,"dots": false,"slidesToShow": '.$slidesToScroll_600.',"slidesToScroll": 1}}]}';
             
             ?>
-            <div class="mos-beforeafter-block text-<?php echo esc_html( $fields['image-carousel-alignment'] ) ?> <?php echo $cls ?>" data-slick='<?php echo $data_slick ?>'>
+            <div class="mos-image-carousel-block text-<?php echo esc_html( $fields['image-carousel-alignment'] ) ?> <?php echo $cls ?>" data-slick='<?php echo $data_slick ?>'>
                 <?php //$image_alt = get_post_meta($fields['image-carousel-image'], '_wp_attachment_image_alt', TRUE);?>
                 <?php foreach($fields['image-carousel-slider'] as $slide) : ?>
                     <?php if ($slide['media']) : ?>
