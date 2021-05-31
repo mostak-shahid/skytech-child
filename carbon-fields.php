@@ -593,8 +593,6 @@ function crb_attach_theme_options() {
         )),
         Field::make( 'text', 'image-carousel-autoplay-speed', __( 'Autoplay Speed' ) )
             ->set_attribute( 'placeholder', '2000' ),
-        Field::make( 'text', 'image_size', __( 'Image Size' ) )
-            ->set_attribute( 'placeholder', 'width,height. Ex: 370,370' ),
         Field::make( 'complex', 'image-carousel-slider', __( 'Services' ) )
             ->add_fields( array(
                 Field::make( 'image', 'media', __( 'Image' ) ),
