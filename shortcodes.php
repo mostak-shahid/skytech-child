@@ -198,12 +198,10 @@ function social_menu_func( $atts = array(), $content = '' ) {
         foreach($slices as $url){
             $html .='<li>';
             $url = trim($url);
-            if (preg_match('/facebook/i', $url)) $html .= '<a href="'.$url.'" target="_blank"><i class="fa fa-facebook"></i></a>';
-            elseif (preg_match('/skype/i', $url))$html .= '<a href="'.$url.'"><i class="fa fa-skype"></i></a>';
-            elseif (preg_match('/twitter/i', $url))$html .= '<a href="'.$url.'" target="_blank"><i class="fa fa-twitter"></i></a>';
-            elseif (preg_match('/linkedin/i', $url))$html .= '<a href="'.$url.'" target="_blank"><i class="fa fa-linkedin"></i></a>';
-            elseif (preg_match('/google/i', $url))$html .= '<a href="'.$url.'" target="_blank"><i class="fa fa-google-plus"></i></a>';
-            elseif (preg_match('/youtube/i', $url))$html .= '<a href="'.$url.'" target="_blank"><i class="fa fa-youtube"></i></a>';
+            $pattern = '/http(s)?:\/\/(www.)?(api.)?/i';
+            $removeStr = preg_replace($pattern, '', $url);
+            $arr = explode('.',$removeStr);            
+            $html .= '<a href="'.$url.'" target="_blank"><i class="fa fa-'.$arr[0].'"></i></a>';
             $html .='</li>';
         }
         $html .='</ul>';
