@@ -623,11 +623,11 @@ function crb_attach_theme_options() {
             $data_slick = '{"slidesToShow": '.$slidesToScroll.',"slidesToScroll": 1,"autoplay": '.$autoplay.',"autoplaySpeed": '.$autoplaySpeed.',"dots": false,"arrows":true,"responsive": [{"breakpoint": 782,"settings": {"slidesToShow": '.$slidesToScroll_782.',"slidesToScroll": 1}},{"breakpoint": 600,"settings": {"arrows": true,"dots": false,"slidesToShow": '.$slidesToScroll_600.',"slidesToScroll": 1}}]}';
             
             ?>
-            <div class="mos-image-carousel-block text-<?php echo esc_html( $fields['image-carousel-alignment'] ) ?> <?php echo $cls ?>" data-slick='<?php echo $data_slick ?>'>
+            <div class="mos-image-carousel-block <?php echo $cls ?>" data-slick='<?php echo $data_slick ?>'>
                 <?php //$image_alt = get_post_meta($fields['image-carousel-image'], '_wp_attachment_image_alt', TRUE);?>
                 <?php foreach($fields['image-carousel-slider'] as $slide) : ?>
                     <?php if ($slide['media']) : ?>
-                    <div class="item position-relative" id="item-<?php echo $slide['_id']?>">
+                    <div class="item position-relative text-<?php echo esc_html( $fields['image-carousel-alignment'] ) ?>" id="item-<?php echo $slide['_id']?>">
                         <?php echo wp_get_attachment_image($slide['media'],'full',false,array('class'=>'slick-item-img'))?>
                         <?php if ($slide['btn-url']) :?>
                             <a href="<?php echo esc_url(do_shortcode($slide['btn-url'])); ?>" class="hidden-link"></a>
