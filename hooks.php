@@ -327,3 +327,42 @@ function add_mos_additional_coding() {
               
     <?php 
 }
+/*
+$purifyCssEnabled = true;
+function dequeue_all_styles() {
+    global $wp_styles;
+    foreach( $wp_styles->queue as $style ) {
+        wp_dequeue_style($wp_styles->registered[$style]->handle);
+    }
+}
+ Remove inline <style> blocks. 
+function start_html_buffer() {
+    // buffer output html
+    ob_start();
+}
+function end_html_buffer() {
+    // get buffered HTML
+    $wpHTML = ob_get_clean();
+
+    // remove <style> blocks using regular expression
+    $wpHTML = preg_replace("/<style[^>]*>[^<]*<\/style>/m",'', $wpHTML);
+
+    echo $wpHTML;
+}
+function enqueue_pure_styles() {
+    wp_enqueue_style('pure-styles', home_url().'/styles.pure.css');
+}
+
+if ($purifyCssEnabled) {
+    // this will remove all enqueued styles in head
+    add_action('wp_print_styles', 'dequeue_all_styles', PHP_INT_MAX - 1);
+
+    // if there are any plugins that print styles in body (like Elementor),
+    // you'll need to remove them as well
+    add_action('elementor/frontend/after_enqueue_styles', 'dequeue_all_styles',PHP_INT_MAX);
+    
+    add_action('template_redirect', 'start_html_buffer', 0); // wp hook just before the template is loaded
+    add_action('wp_footer', 'end_html_buffer', PHP_INT_MAX); // wp hook after wp_footer()
+    add_action('wp_print_styles', 'enqueue_pure_styles', PHP_INT_MAX);
+}
+*/
