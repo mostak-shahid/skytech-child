@@ -312,3 +312,18 @@ if ( ! function_exists( 'mos_post_classes' ) ) {
 	}
 }
 add_filter( 'post_class', 'mos_post_classes' );
+
+add_action( 'wp_head', 'add_mos_additional_coding', 999 );
+function add_mos_additional_coding() {
+    echo carbon_get_theme_option( 'mos_additional_coding' );
+    ?>
+    <link rel="apple-touch-icon" href="<?php echo get_site_icon_url(512) ?>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_site_icon_url(180) ?>">
+    <link rel="apple-touch-icon" sizes="150x150" href="<?php echo get_site_icon_url(150) ?>">
+    
+    <link rel="icon" href="<?php echo get_site_icon_url(512) ?>">
+    <link rel="icon" sizes="32x32" href="<?php echo get_site_icon_url(32) ?>">
+    <link rel="icon" sizes="16x16" href="h<?php echo get_site_icon_url(16) ?>">  
+              
+    <?php 
+}

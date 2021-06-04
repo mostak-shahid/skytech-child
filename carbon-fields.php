@@ -9,6 +9,10 @@ function crb_attach_theme_options() {
         ->add_fields( array(
             Field::make( 'text', 'crb_text', 'Text Field' ),
         ));*/
+    Container::make( 'theme_options', __( 'Custom Code', 'crb' ) )
+        ->add_fields( array(
+            Field::make( 'textarea', 'mos_additional_coding', 'Additional Coding' ),
+        ));
     Container::make( 'post_meta', 'Event Data' )
         ->where( 'post_type', '=', 'event' )
         ->add_fields( array(
