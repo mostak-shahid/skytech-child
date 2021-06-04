@@ -550,6 +550,7 @@ body { color:#383636!important}
 .social-menu ul li{
     display:inline-block;
     margin-right:10px;
+    margin-bottom: 10px;
 }
 .social-menu ul li a {
     display:block;
