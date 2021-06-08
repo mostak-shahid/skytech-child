@@ -1643,6 +1643,12 @@ header.ast-sticky-active {
 	.mos-svg-block-wrapper.contact-phone-svg-block .mos-svg-block .text-part .desc {
 		font-size: 25px;
 	}
+    .single-post .mos-post-autor-details {
+        display: block;
+    }
+    .single-post .mos-post-autor-details .img-part {
+        margin-bottom: 15px;
+    }
 }
 @media (max-width:782px){
     .mt-sm-0{margin-top: 0!important}
