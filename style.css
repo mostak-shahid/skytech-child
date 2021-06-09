@@ -651,6 +651,9 @@ header.ast-sticky-active,.ast-header-sticked {
     -webkit-backdrop-filter:blur(10px);
     backdrop-filter:blur(10px);
 }
+.ast-primary-header-bar {
+    border-style: none!important;
+}
 #banner-section .banner-title {
     line-height:1;
 }
