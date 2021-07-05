@@ -18,7 +18,7 @@ function mos_author_details_func(){
         <div class="img-part"><?php echo get_avatar(get_the_author_meta('ID'),120) ?></div>
         <div class="text-part">
             <h4 class="author-name" itemprop="name"><a href="<?php echo get_the_author_meta('user_url') ?>" title="View all posts by <?php echo get_the_author_meta('display_name') ?>" rel="author" class="url fn n" itemprop="url"><?php echo get_the_author_meta('display_name') ?></a></h4>
-            <div class="author-description" itemprop="name"><?php echo get_the_author_meta('description') ?></div>
+            <div class="author-description" itemprop="name"><?php echo do_shortcode(get_the_author_meta('description')) ?></div>
         </div>
     </div>
     <?php
