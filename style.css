@@ -1186,7 +1186,7 @@ header.ast-sticky-active,.ast-header-sticked {
 }
 .single-post .related-post-wrapper {
     width:100%;
-    max-width:1240px;
+    max-width:1170px;
     margin-left:auto;
     margin-right:auto;
 }
@@ -1205,6 +1205,9 @@ header.ast-sticky-active,.ast-header-sticked {
 }
 .single-post .related-post-wrapper .post-content .related-entry-title a {
     color:#151515;
+}
+.single-post .post-navigation .nav-previous {
+    text-align: left;
 }
 /*Author Details*/
 .single-post .mos-post-autor-details {

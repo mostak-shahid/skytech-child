@@ -327,6 +327,101 @@ function add_mos_additional_coding() {
               
     <?php 
 }
+
+if ( ! function_exists( 'astra_post_author' ) ) {
+	function astra_post_author( $output_filter = '' ) {
+
+		ob_start();
+
+		echo '<span ';
+			echo astra_attr(
+				'post-meta-author',
+				array(
+					'class' => 'posted-by vcard author',
+				)
+			);
+		echo '>';
+			// Translators: Author Name. ?>
+			<a title="<?php printf( esc_attr__( 'View all posts by %1$s', 'astra' ), get_the_author() ); ?>" 
+				href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"
+				<?php
+					echo astra_attr(
+						'author-url',
+						array(
+							'class' => 'url fn n',
+						)
+					);
+				?>
+				>
+				<sapn class="author-name"><?php echo get_avatar( get_the_author_meta( 'ID' ), 32, '', '', ['class'=>'rounded-circle'] ); ?></sapn>
+				<span 
+				<?php
+					echo astra_attr(
+						'author-name',
+						array(
+							'class' => 'author-name',
+						)
+					);
+				?>
+				><?php echo get_the_author(); ?></span>
+			</a>
+		</span>
+
+		<?php
+
+		$output = ob_get_clean();
+
+		return apply_filters( 'astra_post_author', $output, $output_filter );
+	}
+}
+/*if ( ! function_exists( 'astra_post_author' ) ) {
+	function astra_post_author( $output_filter = '' ) {
+   
+		ob_start();
+        
+		echo '<span ';
+			echo astra_attr(
+				'post-meta-author',
+				array(
+					'class' => 'posted-by vcard author',
+				)
+			);
+		echo '>';
+			// Translators: Author Name. ?>
+			<a title="<?php printf( esc_attr__( 'View all posts by %1$s', 'astra' ), get_the_author() ); ?>" 
+				href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author"
+				<?php
+					echo astra_attr(
+						'author-url',
+						array(
+							'class' => 'url fn n',
+						)
+					);
+				?>
+				>
+				<span
+				<?php
+					echo astra_attr(
+						'author-name',
+						array(
+							'class' => 'author-name',
+						)
+					);
+				?>
+				><?php echo get_the_author(); ?></span>
+			</a>
+
+		</span>
+        <?php echo '<span class="my_class">';
+        echo get_avatar( $user_ID, 30 );
+        echo '</span>'; ?>
+		<?php
+
+		$output = ob_get_clean();
+
+		return apply_filters( 'astra_post_author', $output, $output_filter );
+	}
+}*/
 /*
 $purifyCssEnabled = true;
 function dequeue_all_styles() {
