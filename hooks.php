@@ -378,7 +378,7 @@ if ( ! function_exists( 'astra_post_author' ) ) {
 add_action('astra_primary_content_top', 'mos_single_blog_post_header'); //astra_content_top
 if ( ! function_exists( 'mos_single_blog_post_header' ) ) {
 	function mos_single_blog_post_header() {
-        //if (is_single() && get_post_type() == 'post') {
+        if (is_single() && get_post_type() == 'post') {
             ?>
             <div class="BlogPost__header">
                 <?php if (has_post_thumbnail()) :?>
@@ -422,7 +422,7 @@ if ( ! function_exists( 'mos_single_blog_post_header' ) ) {
                 </div>
             </div>
             <?php
-        //}
+        }
     }
 }
 
