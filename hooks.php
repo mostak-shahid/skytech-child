@@ -374,6 +374,58 @@ if ( ! function_exists( 'astra_post_author' ) ) {
 		return apply_filters( 'astra_post_author', $output, $output_filter );
 	}
 }
+
+add_action('astra_primary_content_top', 'mos_single_blog_post_header'); //astra_content_top
+if ( ! function_exists( 'mos_single_blog_post_header' ) ) {
+	function mos_single_blog_post_header() {
+        //if (is_single() && get_post_type() == 'post') {
+            ?>
+            <div class="BlogPost__header">
+                <?php if (has_post_thumbnail()) :?>
+                <div class="BlogPost__thumbnail">
+                    <!--<img src="https://cdn.liveagent.com/app/uploads/2021/02/The-25-best-WordPress-live-chat-plugins.svg" class="attachment-blog_post_thumbnail size-blog_post_thumbnail wp-post-image" alt="The 25 best WordPress live chat plugins" loading="lazy" height="400" width="1340">-->
+                    <?php the_post_thumbnail() ?>
+                </div>
+                <?php endif?>
+                <div class="BlogPost__intro">
+                    <div class="BlogPost__category">
+                        <span class="d-none">Categories:</span>
+                        <span>
+                            <?php
+                            $categories = get_the_category();
+                            if ( ! empty( $categories ) ) {
+                                $n = 0;
+                                foreach($categories as $category) {
+                                    if ($n) echo ', ';
+                                    echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
+                                    //echo esc_html( $category->name );
+                                    $n++;                                                    
+                                }
+                            }
+                            ?>
+                        </span>
+                    </div>
+                    <h1 class="BlogPost__title"><?php echo get_the_title(); ?></h1>
+
+                    <div class="BlogPost__author">
+                        <?php 
+                        $author_id = get_post_field ('post_author', $cause_id); 
+                        $display_name = get_the_author_meta( 'display_name' , $author_id );
+                        ?>
+                        <div class="BlogPost__author__avatar">
+                            <img alt="<?php echo $display_name;?>" src="<?php echo get_avatar_url($author_id,['size'=>40])?>" class="avatar avatar-40 photo" height="40" width="40" loading="lazy">
+                        </div>
+
+                        <p class="BlogPost__author__name"><?php echo $display_name;?></p>
+                        <p class="BlogPost__author__position">Last modified on <?php echo get_the_modified_date('M n, Y') ?></p>
+                    </div>
+                </div>
+            </div>
+            <?php
+        //}
+    }
+}
+
 /*if ( ! function_exists( 'astra_post_author' ) ) {
 	function astra_post_author( $output_filter = '' ) {
    
