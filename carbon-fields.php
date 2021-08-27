@@ -54,12 +54,12 @@ function crb_attach_theme_options() {
             Field::make( 'text', 'case-study-client-name', __( 'Client Name' ) ),
             Field::make( 'image', 'case-study-client-image', __( 'Client Image' ) ),
             Field::make( 'text', 'case-study-client-position', __( 'Client Position' ) ),            
-            Field::make( 'multiselect', 'case-study-working-areas', __( 'Working Areas' ) )
+            /*Field::make( 'multiselect', 'case-study-working-areas', __( 'Working Areas' ) )
                 ->set_options( array(
                     'Appointment Setting' => 'Appointment Setting',
                     'Software Development' => 'Software Development',
                     'Advertising & Marketing' => 'Advertising & Marketing',
-                )),
+                )),*/
             Field::make( 'complex', 'case-study-results', __( 'Results' ) )
                 ->add_fields( array(
                     Field::make( 'text', 'case-study-results-title', __( 'Title' ) ),
