@@ -177,7 +177,8 @@ add_action('astra_entry_content_before', 'custom_case_study_post_meta', 11);
 if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
 	function custom_case_study_post_meta() {
         if ('case-study' == get_post_type()) :
-            $working_areas = carbon_get_post_meta( get_the_ID(), 'case-study-working-areas' );
+            //$working_areas = carbon_get_post_meta( get_the_ID(), 'case-study-working-areas' );
+            $working_areas = get_the_terms( get_the_ID(), 'case_study_working_area' );
             $short_description = carbon_get_post_meta( get_the_ID(), 'case-study-short-description' );
             $client_name = carbon_get_post_meta( get_the_ID(), 'case-study-client-name' );
             $client_image = carbon_get_post_meta( get_the_ID(), 'case-study-client-image' );
@@ -197,13 +198,17 @@ if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
                 <?php if(sizeof($working_areas)) : ?>
                     <ul class="working-areas list-inline">
                         <?php foreach($working_areas as $working_areas) : ?>
-                            <li><?php echo $working_areas ?></li>
+                            <li><?php echo $working_areas->name; ?></li>
                         <?php endforeach?>
                     </ul>
                 <?php endif?>
                 <div class="d-flex">
                     <?php if ($short_description) : ?>
-                        <div class="short-description"><?php echo do_shortcode($short_description)?></div>
+                        
+                        <div class="short-description">
+                            <h2>What we did</h2>
+                            <?php echo do_shortcode($short_description)?>
+                        </div>
                     <?php endif?>
                     <div class="customer-box text-center">
                         <?php if ($client_image) : ?>
@@ -231,6 +236,7 @@ if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
                 </div>
                 <?php endif?>
                 <?php if ($short_description) : ?>
+                    <h2>About Company</h2>
                     <div class="company_about"><?php echo $company_about?></div>
                 <?php endif?> 
                 <?php if ($oembed) : ?>
