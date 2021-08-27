@@ -419,6 +419,9 @@ if ( ! function_exists( 'mos_single_blog_post_header' ) ) {
                         <p class="BlogPost__author__name"><?php echo $display_name;?></p>
                         <p class="BlogPost__author__position">Last modified on <?php echo get_the_modified_date('M n, Y') ?></p>
                     </div>
+					<div class="share-buttons">
+						<?php echo do_shortcode('[addtoany]')?>
+					</div>
                 </div>
             </div>
             <?php
