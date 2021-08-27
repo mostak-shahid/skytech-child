@@ -185,6 +185,7 @@ if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
             $client_position = carbon_get_post_meta( get_the_ID(), 'case-study-client-position' );
         
             $results = carbon_get_post_meta( get_the_ID(), 'case-study-results' );
+            $company_name = carbon_get_post_meta( get_the_ID(), 'case-study-company-name' );
             $company_about = carbon_get_post_meta( get_the_ID(), 'case-study-company-about' );
             $oembed = carbon_get_post_meta( get_the_ID(), 'case-study-oembed' );
         
@@ -235,8 +236,8 @@ if ( ! function_exists( 'custom_case_study_post_meta' ) ) {
                     <?php endforeach;?>
                 </div>
                 <?php endif?>
-                <?php if ($short_description) : ?>
-                    <h2>About Company</h2>
+                <?php if ($company_about) : ?>
+                    <h2>About <?php echo ($company_name)?$company_name:'Comapny' ?></h2>
                     <div class="company_about"><?php echo $company_about?></div>
                 <?php endif?> 
                 <?php if ($oembed) : ?>
